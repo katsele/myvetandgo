@@ -2,5 +2,30 @@
   "common": {
     "appName": "My Vet&Go",
     "welcome": "Welkom bij My Vet&Go"
+  },
+  "auth": {
+    "login": {
+      "title": "Inloggen",
+      "submit": "Inloggen"
+    },
+    "signup": {
+      "title": "Registreren",
+      "invitationRequired": "Een uitnodiging is vereist om te registreren.",
+      "submit": "Account aanmaken"
+    },
+    "onboarding": {
+      "title": "Vul uw profiel aan",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "language": "Voorkeurstaal",
+      "country": "Land",
+      "submit": "Beginnen",
+      "saving": "Opslaan..."
+    },
+    "unauthorized": {
+      "title": "Niet geautoriseerd",
+      "message": "Log in om deze pagina te bekijken.",
+      "login": "Inloggen"
+    }
   }
 }

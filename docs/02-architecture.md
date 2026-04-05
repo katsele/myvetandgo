@@ -26,7 +26,7 @@ This document extends the niche emergency architecture (`architecture-myvetandgo
 
 **Core architectural decision maintained:** Full custom (no headless CMS). Galaxy reinforces this choice — the complexity of multi-specialty curricula, multi-tenant B2B, AI search, and 5-country CE compliance is far beyond any CMS.
 
-**Stack remains:** Next.js (App Router) + PostgreSQL (Neon) + Auth.js + Vimeo + pgvector. Galaxy adds: Stripe Billing, contributor portal, expanded RBAC, and a content pipeline.
+**Stack remains:** Next.js (App Router) + PostgreSQL (Neon) + Neon Auth + Vimeo + pgvector. Galaxy adds: Stripe Billing, contributor portal, expanded RBAC, and a content pipeline.
 
 ---
 
@@ -553,9 +553,10 @@ Galaxy operates in 5 EU/EEA countries + Switzerland. Key requirements:
 
 ### Authentication & Authorization
 
-- **Auth.js** with email/password + magic link (Phase 1–3), OAuth providers optional (Phase 4+).
-- **Invitation-only** (Phase 1–3), **open registration** (Phase 4+) via feature flag.
-- **RBAC:** 6 roles (VET, ASV, MANAGER, GROUP_ADMIN, CONTRIBUTOR, ADMIN). Permissions checked at Server Action / API route level.
+- **Neon Auth** (`@neondatabase/auth`) — built on Better Auth, stores auth data in the `neon_auth` schema within the same Neon database. Provides email/password, email OTP (magic link), and OAuth (Phase 4+). Pre-built UI components (`AuthView`, `AccountView`) and admin APIs (`admin.listUsers()`, `admin.banUser()`, `admin.setRole()`).
+- **User sync:** DB trigger on `neon_auth.user` auto-creates/links app `User` rows (with domain fields: role, country, language, organizationId). `ON CONFLICT (email)` handles invitation-first flow where admins pre-create User rows before signup.
+- **Invitation-only** (Phase 1–3), **open registration** (Phase 4+) via feature flag (`FEATURE_OPEN_REGISTRATION`).
+- **RBAC:** 6 roles (VET, ASV, MANAGER, GROUP_ADMIN, CONTRIBUTOR, ADMIN). Permissions checked at Server Action / API route level via app-layer guards (`requireAuth()`, `requireRole()`). Neon Auth handles identity; the app handles authorization.
 - **Row-Level Security:** Users can only access their own progress, certificates, and organization data. Managers see their org's users only. Group admins see child organizations.
 
 ### Content Protection
