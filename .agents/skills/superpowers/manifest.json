@@ -1,0 +1,139 @@
+{
+  "name": "superpowers",
+  "version": "5.0.7",
+  "description": "Complete software development workflow: brainstorm → plan → implement (TDD) → review → ship. Composable skills that enforce disciplined agent behavior.",
+  "source": "https://github.com/obra/superpowers",
+  "skills": {
+    "brainstorming": {
+      "path": "brainstorming/SKILL.md",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+      "type": "rigid",
+      "phase": "design",
+      "supporting_files": [
+        "brainstorming/visual-companion.md",
+        "brainstorming/spec-document-reviewer-prompt.md"
+      ]
+    },
+    "writing-plans": {
+      "path": "writing-plans/SKILL.md",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code.",
+      "type": "rigid",
+      "phase": "planning",
+      "supporting_files": [
+        "writing-plans/plan-document-reviewer-prompt.md"
+      ]
+    },
+    "executing-plans": {
+      "path": "executing-plans/SKILL.md",
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints.",
+      "type": "rigid",
+      "phase": "implementation"
+    },
+    "subagent-driven-development": {
+      "path": "subagent-driven-development/SKILL.md",
+      "description": "Use when executing implementation plans with independent tasks in the current session.",
+      "type": "rigid",
+      "phase": "implementation",
+      "supporting_files": [
+        "subagent-driven-development/implementer-prompt.md",
+        "subagent-driven-development/spec-reviewer-prompt.md",
+        "subagent-driven-development/code-quality-reviewer-prompt.md"
+      ]
+    },
+    "dispatching-parallel-agents": {
+      "path": "dispatching-parallel-agents/SKILL.md",
+      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies.",
+      "type": "flexible",
+      "phase": "implementation"
+    },
+    "test-driven-development": {
+      "path": "test-driven-development/SKILL.md",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code.",
+      "type": "rigid",
+      "phase": "implementation",
+      "supporting_files": [
+        "test-driven-development/testing-anti-patterns.md"
+      ]
+    },
+    "systematic-debugging": {
+      "path": "systematic-debugging/SKILL.md",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes.",
+      "type": "rigid",
+      "phase": "debugging",
+      "supporting_files": [
+        "systematic-debugging/root-cause-tracing.md",
+        "systematic-debugging/defense-in-depth.md",
+        "systematic-debugging/condition-based-waiting.md",
+        "systematic-debugging/condition-based-waiting-example.ts",
+        "systematic-debugging/find-polluter.sh"
+      ]
+    },
+    "verification-before-completion": {
+      "path": "verification-before-completion/SKILL.md",
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs.",
+      "type": "rigid",
+      "phase": "verification"
+    },
+    "requesting-code-review": {
+      "path": "requesting-code-review/SKILL.md",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements.",
+      "type": "rigid",
+      "phase": "review",
+      "supporting_files": [
+        "requesting-code-review/code-reviewer.md"
+      ]
+    },
+    "receiving-code-review": {
+      "path": "receiving-code-review/SKILL.md",
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable.",
+      "type": "rigid",
+      "phase": "review"
+    },
+    "using-git-worktrees": {
+      "path": "using-git-worktrees/SKILL.md",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans.",
+      "type": "flexible",
+      "phase": "setup"
+    },
+    "finishing-a-development-branch": {
+      "path": "finishing-a-development-branch/SKILL.md",
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work.",
+      "type": "flexible",
+      "phase": "completion"
+    },
+    "writing-skills": {
+      "path": "writing-skills/SKILL.md",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment.",
+      "type": "flexible",
+      "phase": "meta"
+    },
+    "using-superpowers": {
+      "path": "using-superpowers/SKILL.md",
+      "description": "Bootstrap skill - establishes how to find and use skills, requiring Skill tool invocation before ANY response.",
+      "type": "rigid",
+      "phase": "bootstrap"
+    }
+  },
+  "agents": {
+    "code-reviewer": {
+      "path": "agents/code-reviewer.md",
+      "description": "Senior code reviewer that validates completed work against plans and coding standards."
+    }
+  },
+  "hooks": {
+    "session-start": {
+      "path": "hooks/session-start",
+      "trigger": "SessionStart",
+      "description": "Injects the using-superpowers bootstrap skill at conversation start."
+    }
+  },
+  "workflow_order": [
+    "brainstorming",
+    "using-git-worktrees",
+    "writing-plans",
+    "subagent-driven-development",
+    "test-driven-development",
+    "requesting-code-review",
+    "finishing-a-development-branch"
+  ]
+}
