@@ -16,21 +16,21 @@ All skills live as `SKILL.md` files in subdirectories. Read `manifest.json` for 
 
 ### Core Workflow (in order)
 
-| Phase | Skill | Trigger |
-|-------|-------|---------|
-| Design | `brainstorming/SKILL.md` | Before any creative or feature work |
-| Setup | `using-git-worktrees/SKILL.md` | When isolation is needed |
-| Planning | `writing-plans/SKILL.md` | When you have a spec to break down |
-| Implementation | `subagent-driven-development/SKILL.md` | Independent tasks in current session |
-| Implementation | `executing-plans/SKILL.md` | Batch execution with checkpoints |
-| Implementation | `dispatching-parallel-agents/SKILL.md` | 2+ independent tasks |
-| Testing | `test-driven-development/SKILL.md` | Before writing implementation code |
-| Debugging | `systematic-debugging/SKILL.md` | Any bug or unexpected behavior |
-| Verification | `verification-before-completion/SKILL.md` | Before claiming work is done |
-| Review | `requesting-code-review/SKILL.md` | After completing features |
-| Review | `receiving-code-review/SKILL.md` | When processing feedback |
-| Completion | `finishing-a-development-branch/SKILL.md` | When all tasks are done |
-| Meta | `writing-skills/SKILL.md` | Creating or editing skills |
+| Phase          | Skill                                     | Trigger                              |
+| -------------- | ----------------------------------------- | ------------------------------------ |
+| Design         | `brainstorming/SKILL.md`                  | Before any creative or feature work  |
+| Setup          | `using-git-worktrees/SKILL.md`            | When isolation is needed             |
+| Planning       | `writing-plans/SKILL.md`                  | When you have a spec to break down   |
+| Implementation | `subagent-driven-development/SKILL.md`    | Independent tasks in current session |
+| Implementation | `executing-plans/SKILL.md`                | Batch execution with checkpoints     |
+| Implementation | `dispatching-parallel-agents/SKILL.md`    | 2+ independent tasks                 |
+| Testing        | `test-driven-development/SKILL.md`        | Before writing implementation code   |
+| Debugging      | `systematic-debugging/SKILL.md`           | Any bug or unexpected behavior       |
+| Verification   | `verification-before-completion/SKILL.md` | Before claiming work is done         |
+| Review         | `requesting-code-review/SKILL.md`         | After completing features            |
+| Review         | `receiving-code-review/SKILL.md`          | When processing feedback             |
+| Completion     | `finishing-a-development-branch/SKILL.md` | When all tasks are done              |
+| Meta           | `writing-skills/SKILL.md`                 | Creating or editing skills           |
 
 ### Agents
 

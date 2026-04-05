@@ -19,9 +19,7 @@
       "description": "Use when you have a spec or requirements for a multi-step task, before touching code.",
       "type": "rigid",
       "phase": "planning",
-      "supporting_files": [
-        "writing-plans/plan-document-reviewer-prompt.md"
-      ]
+      "supporting_files": ["writing-plans/plan-document-reviewer-prompt.md"]
     },
     "executing-plans": {
       "path": "executing-plans/SKILL.md",
@@ -51,9 +49,7 @@
       "description": "Use when implementing any feature or bugfix, before writing implementation code.",
       "type": "rigid",
       "phase": "implementation",
-      "supporting_files": [
-        "test-driven-development/testing-anti-patterns.md"
-      ]
+      "supporting_files": ["test-driven-development/testing-anti-patterns.md"]
     },
     "systematic-debugging": {
       "path": "systematic-debugging/SKILL.md",
@@ -79,9 +75,7 @@
       "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements.",
       "type": "rigid",
       "phase": "review",
-      "supporting_files": [
-        "requesting-code-review/code-reviewer.md"
-      ]
+      "supporting_files": ["requesting-code-review/code-reviewer.md"]
     },
     "receiving-code-review": {
       "path": "receiving-code-review/SKILL.md",

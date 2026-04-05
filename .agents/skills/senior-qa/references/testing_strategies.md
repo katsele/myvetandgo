@@ -38,27 +38,30 @@ The testing pyramid guides how to distribute testing effort across different tes
 
 For frontend applications, the pyramid shifts slightly:
 
-| Level | Percentage | Tools | Focus |
-|-------|------------|-------|-------|
-| Unit | 50-60% | Jest, RTL | Pure functions, hooks, isolated components |
-| Integration | 25-35% | RTL, MSW | Component trees, API calls, context |
-| E2E | 10-15% | Playwright | Critical user flows, cross-page navigation |
+| Level       | Percentage | Tools      | Focus                                      |
+| ----------- | ---------- | ---------- | ------------------------------------------ |
+| Unit        | 50-60%     | Jest, RTL  | Pure functions, hooks, isolated components |
+| Integration | 25-35%     | RTL, MSW   | Component trees, API calls, context        |
+| E2E         | 10-15%     | Playwright | Critical user flows, cross-page navigation |
 
 ### Why This Distribution?
 
 **Unit tests are fast and cheap:**
+
 - Execute in milliseconds
 - Pinpoint failures precisely
 - Easy to maintain
 - Run on every commit
 
 **Integration tests balance coverage and cost:**
+
 - Test realistic scenarios
 - Catch component interaction bugs
 - Moderate execution time
 - Run on every PR
 
 **E2E tests are expensive but essential:**
+
 - Validate real user experience
 - Catch deployment issues
 - Slow and brittle
@@ -73,6 +76,7 @@ For frontend applications, the pyramid shifts slightly:
 **Purpose:** Verify individual units of code work correctly in isolation.
 
 **What to Unit Test:**
+
 - Pure utility functions
 - Custom hooks (with renderHook)
 - Individual component rendering
@@ -118,8 +122,8 @@ describe('formatPrice', () => {
 // hooks/useCounter.ts
 export function useCounter(initial = 0) {
   const [count, setCount] = useState(initial);
-  const increment = () => setCount(c => c + 1);
-  const decrement = () => setCount(c => c - 1);
+  const increment = () => setCount((c) => c + 1);
+  const decrement = () => setCount((c) => c - 1);
   const reset = () => setCount(initial);
   return { count, increment, decrement, reset };
 }
@@ -160,6 +164,7 @@ describe('useCounter', () => {
 **Purpose:** Verify multiple units work together correctly.
 
 **What to Integration Test:**
+
 - Component trees with multiple children
 - Components with context providers
 - Form submission flows
@@ -237,6 +242,7 @@ describe('UserProfile', () => {
 **Purpose:** Verify complete user flows work in a real browser environment.
 
 **What to E2E Test:**
+
 - Critical business flows (checkout, signup, login)
 - Cross-page navigation sequences
 - Authentication flows
@@ -367,16 +373,17 @@ test('homepage has no a11y violations', async ({ page }) => {
 
 ### Recommended Thresholds by Project Type
 
-| Project Type | Statements | Branches | Functions | Lines |
-|--------------|------------|----------|-----------|-------|
-| Startup/MVP | 60% | 50% | 60% | 60% |
-| Growing Product | 75% | 70% | 75% | 75% |
-| Enterprise | 85% | 80% | 85% | 85% |
-| Safety Critical | 95% | 90% | 95% | 95% |
+| Project Type    | Statements | Branches | Functions | Lines |
+| --------------- | ---------- | -------- | --------- | ----- |
+| Startup/MVP     | 60%        | 50%      | 60%       | 60%   |
+| Growing Product | 75%        | 70%      | 75%       | 75%   |
+| Enterprise      | 85%        | 80%      | 85%       | 85%   |
+| Safety Critical | 95%        | 90%      | 95%       | 95%   |
 
 ### Coverage by Code Type
 
 **High Coverage Priority (80%+):**
+
 - Business logic
 - State management
 - API handlers
@@ -385,12 +392,14 @@ test('homepage has no a11y violations', async ({ page }) => {
 - Payment processing
 
 **Medium Coverage Priority (60-80%):**
+
 - UI components
 - Utility functions
 - Data transformers
 - Custom hooks
 
 **Lower Coverage Priority (40-60%):**
+
 - Static pages
 - Simple wrappers
 - Configuration files
@@ -491,14 +500,14 @@ e2e/
 
 ### Test File Naming Conventions
 
-| Pattern | Use Case |
-|---------|----------|
-| `*.test.ts` | Unit tests |
-| `*.spec.ts` | Integration/E2E tests |
+| Pattern                 | Use Case                   |
+| ----------------------- | -------------------------- |
+| `*.test.ts`             | Unit tests                 |
+| `*.spec.ts`             | Integration/E2E tests      |
 | `*.integration.test.ts` | Explicit integration tests |
-| `*.e2e.spec.ts` | Explicit E2E tests |
-| `*.a11y.test.ts` | Accessibility tests |
-| `*.visual.spec.ts` | Visual regression tests |
+| `*.e2e.spec.ts`         | Explicit E2E tests         |
+| `*.a11y.test.ts`        | Accessibility tests        |
+| `*.visual.spec.ts`      | Visual regression tests    |
 
 ---
 
@@ -581,14 +590,14 @@ e2e:
 
 ### PR Gating Rules
 
-| Test Type | When to Run | Block Merge? |
-|-----------|-------------|--------------|
-| Unit | Every commit | Yes |
-| Integration | Every PR | Yes |
-| E2E (smoke) | Every PR | Yes |
-| E2E (full) | Merge to main | No (alert only) |
-| Visual | Every PR | No (review required) |
-| Performance | Weekly/Release | No (alert only) |
+| Test Type   | When to Run    | Block Merge?         |
+| ----------- | -------------- | -------------------- |
+| Unit        | Every commit   | Yes                  |
+| Integration | Every PR       | Yes                  |
+| E2E (smoke) | Every PR       | Yes                  |
+| E2E (full)  | Merge to main  | No (alert only)      |
+| Visual      | Every PR       | No (review required) |
+| Performance | Weekly/Release | No (alert only)      |
 
 ---
 
@@ -613,12 +622,12 @@ Is it a pure function with no side effects?
 
 ### Test ROI Matrix
 
-| Test Type | Write Time | Run Time | Maintenance | Confidence |
-|-----------|------------|----------|-------------|------------|
-| Unit | Low | Very Fast | Low | Medium |
-| Integration | Medium | Fast | Medium | High |
-| E2E | High | Slow | High | Very High |
-| Visual | Low | Medium | Medium | High (UI) |
+| Test Type   | Write Time | Run Time  | Maintenance | Confidence |
+| ----------- | ---------- | --------- | ----------- | ---------- |
+| Unit        | Low        | Very Fast | Low         | Medium     |
+| Integration | Medium     | Fast      | Medium      | High       |
+| E2E         | High       | Slow      | High        | Very High  |
+| Visual      | Low        | Medium    | Medium      | High (UI)  |
 
 ### When NOT to Test
 
@@ -630,13 +639,13 @@ Is it a pure function with no side effects?
 
 ### Red Flags in Testing Strategy
 
-| Red Flag | Problem | Solution |
-|----------|---------|----------|
-| E2E tests > 30% | Slow CI, flaky tests | Push logic down to integration |
-| Only unit tests | Missing interaction bugs | Add integration tests |
-| Testing mocks | Not testing real behavior | Test behavior, not implementation |
-| 100% coverage goal | Diminishing returns | Focus on critical paths |
-| No E2E tests | Missing deployment issues | Add smoke tests for critical flows |
+| Red Flag           | Problem                   | Solution                           |
+| ------------------ | ------------------------- | ---------------------------------- |
+| E2E tests > 30%    | Slow CI, flaky tests      | Push logic down to integration     |
+| Only unit tests    | Missing interaction bugs  | Add integration tests              |
+| Testing mocks      | Not testing real behavior | Test behavior, not implementation  |
+| 100% coverage goal | Diminishing returns       | Focus on critical paths            |
+| No E2E tests       | Missing deployment issues | Add smoke tests for critical flows |
 
 ---
 
