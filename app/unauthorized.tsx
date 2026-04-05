@@ -22,7 +22,8 @@ export default async function UnauthorizedPage() {
   const pathname = headersList.get('x-next-url') ?? '';
   const segment = pathname.split('/')[1];
   const lang =
-    segment && SUPPORTED_LOCALES.includes(segment as (typeof SUPPORTED_LOCALES)[number])
+    segment &&
+    SUPPORTED_LOCALES.includes(segment as (typeof SUPPORTED_LOCALES)[number])
       ? (segment as (typeof SUPPORTED_LOCALES)[number])
       : DEFAULT_LOCALE;
 

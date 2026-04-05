@@ -7,7 +7,7 @@ import type { Country, Language } from '@/lib/generated/prisma/client';
 
 export async function completeOnboarding(
   _prev: { error?: string } | null,
-  formData: FormData
+  formData: FormData,
 ) {
   const session = await getAppSession();
   if (!session) return { error: 'Not authenticated' };

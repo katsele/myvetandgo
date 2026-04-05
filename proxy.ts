@@ -33,12 +33,12 @@ export function proxy(request: NextRequest) {
   const isPublicPath =
     pathWithoutLang === '/' ||
     PUBLIC_PATHS.some(
-      (p) => pathWithoutLang === p || pathWithoutLang.startsWith(p + '/')
+      (p) => pathWithoutLang === p || pathWithoutLang.startsWith(p + '/'),
     );
 
   if (!isPublicPath) {
     const hasSession = Array.from(request.cookies.getAll()).some((c) =>
-      c.name.startsWith(NEON_AUTH_COOKIE_PREFIX)
+      c.name.startsWith(NEON_AUTH_COOKIE_PREFIX),
     );
     if (!hasSession) {
       const loginUrl = new URL(`/${maybeLang}/login`, request.url);
