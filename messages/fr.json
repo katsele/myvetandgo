@@ -2,5 +2,30 @@
   "common": {
     "appName": "My Vet&Go",
     "welcome": "Bienvenue sur My Vet&Go"
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "submit": "Se connecter"
+    },
+    "signup": {
+      "title": "Inscription",
+      "invitationRequired": "Une invitation est requise pour s'inscrire.",
+      "submit": "Créer mon compte"
+    },
+    "onboarding": {
+      "title": "Complétez votre profil",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "language": "Langue préférée",
+      "country": "Pays",
+      "submit": "Commencer",
+      "saving": "Enregistrement..."
+    },
+    "unauthorized": {
+      "title": "Non autorisé",
+      "message": "Veuillez vous connecter pour accéder à cette page.",
+      "login": "Se connecter"
+    }
   }
 }

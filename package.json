@@ -21,6 +21,7 @@
     "db:reset": "prisma migrate reset"
   },
   "dependencies": {
+    "@neondatabase/auth": "^0.1.0-beta.21",
     "@neondatabase/serverless": "^1.0.2",
     "@prisma/adapter-neon": "^7.6.0",
     "@prisma/client": "^7.6.0",

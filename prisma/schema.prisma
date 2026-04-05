@@ -323,14 +323,16 @@ model Organization {
 
 model User {
   id             String    @id @default(cuid())
+  neonAuthId     String?   @unique
   email          String    @unique
-  firstName      String
-  lastName       String
+  firstName      String    @default("")
+  lastName       String    @default("")
   language       Language  @default(FR)
   role           UserRole  @default(VET)
   orderNumber    String?
   country        Country   @default(BE)
   organizationId String
+  onboarded      Boolean   @default(false)
   createdAt      DateTime  @default(now())
   deactivatedAt  DateTime?
 
@@ -341,6 +343,7 @@ model User {
   progress       CurriculumProgress[]
 
   @@index([organizationId])
+  @@index([neonAuthId])
 }
 
 // ─────────────────────────────────────────────
