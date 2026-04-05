@@ -140,12 +140,12 @@ export class LoginFormObject {
 
 ### When to Use POM
 
-| Scenario | Use POM? |
-|----------|----------|
-| Complex pages with many interactions | Yes |
-| Reusable components tested across suites | Yes |
-| Simple single-use tests | No (overkill) |
-| E2E tests with shared flows | Yes |
+| Scenario                                 | Use POM?      |
+| ---------------------------------------- | ------------- |
+| Complex pages with many interactions     | Yes           |
+| Reusable components tested across suites | Yes           |
+| Simple single-use tests                  | No (overkill) |
+| E2E tests with shared flows              | Yes           |
 
 ---
 
@@ -259,7 +259,7 @@ export class OrderBuilder {
   build(): Order {
     const total = this.items.reduce(
       (sum, item) => sum + item.price * item.quantity,
-      0
+      0,
     );
 
     return {
@@ -411,7 +411,7 @@ afterAll(() => server.close());
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: jest.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -492,7 +492,7 @@ export const handlers = [
     const category = req.url.searchParams.get('category');
     const products = Array.from({ length: 10 }, () => createProduct());
     const filtered = category
-      ? products.filter(p => p.category === category)
+      ? products.filter((p) => p.category === category)
       : products;
     return res(ctx.json(filtered));
   }),
@@ -506,16 +506,13 @@ export const handlers = [
         id: `order-${Date.now()}`,
         ...body,
         status: 'pending',
-      })
+      }),
     );
   }),
 
   // Error simulation
   rest.get('/api/error', (req, res, ctx) => {
-    return res(
-      ctx.status(500),
-      ctx.json({ error: 'Internal Server Error' })
-    );
+    return res(ctx.status(500), ctx.json({ error: 'Internal Server Error' }));
   }),
 ];
 ```
@@ -760,9 +757,7 @@ expect.extend({
     return {
       pass: hasNoErrors && isLoaded,
       message: () =>
-        hasNoErrors
-          ? 'Page loaded with errors'
-          : 'Page did not finish loading',
+        hasNoErrors ? 'Page loaded with errors' : 'Page did not finish loading',
     };
   },
 
@@ -809,7 +804,7 @@ await waitFor(
   () => {
     expect(mockFn).toHaveBeenCalled();
   },
-  { timeout: 5000 }
+  { timeout: 5000 },
 );
 ```
 
@@ -920,12 +915,12 @@ test('retries assertion until pass', async ({ page }) => {
 
 ### When to Use Snapshots
 
-| Good Use Cases | Bad Use Cases |
-|----------------|---------------|
-| Static UI components | Dynamic content |
-| Error messages | Timestamps/IDs |
-| Configuration objects | Large component trees |
-| Serializable data | Interactive components |
+| Good Use Cases        | Bad Use Cases          |
+| --------------------- | ---------------------- |
+| Static UI components  | Dynamic content        |
+| Error messages        | Timestamps/IDs         |
+| Configuration objects | Large component trees  |
+| Serializable data     | Interactive components |
 
 ### Component Snapshots
 
@@ -970,7 +965,7 @@ it('formats date correctly', () => {
 it('generates expected error message', () => {
   const error = new ValidationError('email', 'Invalid format');
   expect(error.message).toMatchInlineSnapshot(
-    `"Validation failed for 'email': Invalid format"`
+    `"Validation failed for 'email': Invalid format"`,
   );
 });
 ```

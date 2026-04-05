@@ -30,7 +30,11 @@ interface SelectContextType {
 
 const SelectContext = createContext<SelectContextType | null>(null);
 
-function Select({ children, value, onChange }: {
+function Select({
+  children,
+  value,
+  onChange,
+}: {
   children: React.ReactNode;
   value: string;
   onChange: (value: string) => void;
@@ -47,20 +51,26 @@ function SelectTrigger({ children }: { children: React.ReactNode }) {
   if (!context) throw new Error('SelectTrigger must be used within Select');
 
   return (
-    <button className="flex items-center gap-2 px-4 py-2 border rounded">
+    <button className="flex items-center gap-2 rounded border px-4 py-2">
       {children}
     </button>
   );
 }
 
-function SelectOption({ value, children }: { value: string; children: React.ReactNode }) {
+function SelectOption({
+  value,
+  children,
+}: {
+  value: string;
+  children: React.ReactNode;
+}) {
   const context = useContext(SelectContext);
   if (!context) throw new Error('SelectOption must be used within Select');
 
   return (
     <div
       onClick={() => context.onChange(value)}
-      className={`px-4 py-2 cursor-pointer hover:bg-gray-100 ${
+      className={`cursor-pointer px-4 py-2 hover:bg-gray-100 ${
         context.value === value ? 'bg-blue-50' : ''
       }`}
     >
@@ -78,7 +88,7 @@ Select.Option = SelectOption;
   <Select.Trigger>Choose option</Select.Trigger>
   <Select.Option value="a">Option A</Select.Option>
   <Select.Option value="b">Option B</Select.Option>
-</Select>
+</Select>;
 ```
 
 ### Render Props
@@ -91,7 +101,11 @@ interface MousePosition {
   y: number;
 }
 
-function MouseTracker({ render }: { render: (pos: MousePosition) => React.ReactNode }) {
+function MouseTracker({
+  render,
+}: {
+  render: (pos: MousePosition) => React.ReactNode;
+}) {
   const [position, setPosition] = useState<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -108,9 +122,11 @@ function MouseTracker({ render }: { render: (pos: MousePosition) => React.ReactN
 // Usage
 <MouseTracker
   render={({ x, y }) => (
-    <div>Mouse position: {x}, {y}</div>
+    <div>
+      Mouse position: {x}, {y}
+    </div>
   )}
-/>
+/>;
 ```
 
 ### Higher-Order Components (HOC)
@@ -172,10 +188,12 @@ function useAsync<T>(asyncFn: () => Promise<T>, deps: any[] = []) {
 
 // Usage
 function UserProfile({ userId }: { userId: string }) {
-  const { data: user, status, error, refetch } = useAsync(
-    () => fetchUser(userId),
-    [userId]
-  );
+  const {
+    data: user,
+    status,
+    error,
+    refetch,
+  } = useAsync(() => fetchUser(userId), [userId]);
 
   if (status === 'loading') return <Spinner />;
   if (status === 'error') return <Error message={error?.message} />;
@@ -228,17 +246,21 @@ function useLocalStorage<T>(key: string, initialValue: T) {
     }
   });
 
-  const setValue = useCallback((value: T | ((val: T) => T)) => {
-    try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+  const setValue = useCallback(
+    (value: T | ((val: T) => T)) => {
+      try {
+        const valueToStore =
+          value instanceof Function ? value(storedValue) : value;
+        setStoredValue(valueToStore);
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        }
+      } catch (error) {
+        console.error('Error saving to localStorage:', error);
       }
-    } catch (error) {
-      console.error('Error saving to localStorage:', error);
-    }
-  }, [key, storedValue]);
+    },
+    [key, storedValue],
+  );
 
   return [storedValue, setValue] as const;
 }
@@ -330,14 +352,14 @@ type CartAction =
 function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case 'ADD_ITEM': {
-      const existingItem = state.items.find(i => i.id === action.payload.id);
+      const existingItem = state.items.find((i) => i.id === action.payload.id);
       if (existingItem) {
         return {
           ...state,
-          items: state.items.map(item =>
+          items: state.items.map((item) =>
             item.id === action.payload.id
               ? { ...item, quantity: item.quantity + 1 }
-              : item
+              : item,
           ),
         };
       }
@@ -349,15 +371,15 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     case 'REMOVE_ITEM':
       return {
         ...state,
-        items: state.items.filter(i => i.id !== action.payload),
+        items: state.items.filter((i) => i.id !== action.payload),
       };
     case 'UPDATE_QUANTITY':
       return {
         ...state,
-        items: state.items.map(item =>
+        items: state.items.map((item) =>
           item.id === action.payload.id
             ? { ...item, quantity: action.payload.quantity }
-            : item
+            : item,
         ),
       };
     case 'CLEAR_CART':
@@ -377,10 +399,16 @@ function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, { items: [], total: 0 });
 
   // Compute total whenever items change
-  const stateWithTotal = useMemo(() => ({
-    ...state,
-    total: state.items.reduce((sum, item) => sum + item.price * item.quantity, 0),
-  }), [state.items]);
+  const stateWithTotal = useMemo(
+    () => ({
+      ...state,
+      total: state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0,
+      ),
+    }),
+    [state.items],
+  );
 
   return (
     <CartContext.Provider value={{ state: stateWithTotal, dispatch }}>
@@ -420,14 +448,18 @@ const useAuthStore = create<AuthStore>()(
       },
       logout: () => set({ user: null, token: null }),
     }),
-    { name: 'auth-storage' }
-  )
+    { name: 'auth-storage' },
+  ),
 );
 
 // Usage
 function Profile() {
   const { user, logout } = useAuthStore();
-  return user ? <div>{user.name} <button onClick={logout}>Logout</button></div> : null;
+  return user ? (
+    <div>
+      {user.name} <button onClick={logout}>Logout</button>
+    </div>
+  ) : null;
 }
 ```
 
@@ -458,22 +490,26 @@ const ListItem = React.memo(
       prevProps.item.name === nextProps.item.name &&
       prevProps.item.count === nextProps.item.count
     );
-  }
+  },
 );
 ```
 
 ### useMemo for Expensive Calculations
 
 ```tsx
-function DataTable({ data, sortColumn, filterText }: {
+function DataTable({
+  data,
+  sortColumn,
+  filterText,
+}: {
   data: Item[];
   sortColumn: string;
   filterText: string;
 }) {
   const processedData = useMemo(() => {
     // Filter
-    let result = data.filter(item =>
-      item.name.toLowerCase().includes(filterText.toLowerCase())
+    let result = data.filter((item) =>
+      item.name.toLowerCase().includes(filterText.toLowerCase()),
     );
 
     // Sort
@@ -488,7 +524,7 @@ function DataTable({ data, sortColumn, filterText }: {
 
   return (
     <table>
-      {processedData.map(item => (
+      {processedData.map((item) => (
         <tr key={item.id}>{/* ... */}</tr>
       ))}
     </table>
@@ -504,13 +540,15 @@ function ParentComponent() {
 
   // Stable reference - won't cause child re-renders
   const handleItemClick = useCallback((id: string) => {
-    setItems(prev => prev.map(item =>
-      item.id === id ? { ...item, selected: !item.selected } : item
-    ));
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, selected: !item.selected } : item,
+      ),
+    );
   }, []);
 
   const handleAddItem = useCallback((newItem: Item) => {
-    setItems(prev => [...prev, newItem]);
+    setItems((prev) => [...prev, newItem]);
   }, []);
 
   return (
@@ -540,9 +578,12 @@ function VirtualList({ items }: { items: Item[] }) {
   return (
     <div ref={parentRef} className="h-[400px] overflow-auto">
       <div
-        style={{ height: `${virtualizer.getTotalSize()}px`, position: 'relative' }}
+        style={{
+          height: `${virtualizer.getTotalSize()}px`,
+          position: 'relative',
+        }}
       >
-        {virtualizer.getVirtualItems().map(virtualRow => (
+        {virtualizer.getVirtualItems().map((virtualRow) => (
           <div
             key={virtualRow.key}
             style={{
@@ -581,7 +622,10 @@ interface ErrorBoundaryState {
   error: Error | null;
 }
 
-class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   state: ErrorBoundaryState = { hasError: false, error: null };
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
@@ -596,17 +640,19 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback || (
-        <div className="p-4 bg-red-50 border border-red-200 rounded">
-          <h2 className="text-red-800 font-bold">Something went wrong</h2>
-          <p className="text-red-600">{this.state.error?.message}</p>
-          <button
-            onClick={() => this.setState({ hasError: false, error: null })}
-            className="mt-2 px-4 py-2 bg-red-600 text-white rounded"
-          >
-            Try Again
-          </button>
-        </div>
+      return (
+        this.props.fallback || (
+          <div className="rounded border border-red-200 bg-red-50 p-4">
+            <h2 className="font-bold text-red-800">Something went wrong</h2>
+            <p className="text-red-600">{this.state.error?.message}</p>
+            <button
+              onClick={() => this.setState({ hasError: false, error: null })}
+              className="mt-2 rounded bg-red-600 px-4 py-2 text-white"
+            >
+              Try Again
+            </button>
+          </div>
+        )
       );
     }
 
@@ -620,7 +666,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   onError={(error) => trackError(error)}
 >
   <MyComponent />
-</ErrorBoundary>
+</ErrorBoundary>;
 ```
 
 ### Suspense with Error Boundary
@@ -645,12 +691,12 @@ function DataComponent() {
 
 ```tsx
 // BAD - Creates new object every render, causes re-renders
-<Component style={{ color: 'red' }} items={[1, 2, 3]} />
+<Component style={{ color: 'red' }} items={[1, 2, 3]} />;
 
 // GOOD - Define outside or use useMemo
 const style = { color: 'red' };
 const items = [1, 2, 3];
-<Component style={style} items={items} />
+<Component style={style} items={items} />;
 
 // Or with useMemo for dynamic values
 const style = useMemo(() => ({ color: theme.primary }), [theme.primary]);
@@ -660,14 +706,14 @@ const style = useMemo(() => ({ color: theme.primary }), [theme.primary]);
 
 ```tsx
 // BAD - Index keys break with reordering/filtering
-{items.map((item, index) => (
-  <Item key={index} data={item} />
-))}
+{
+  items.map((item, index) => <Item key={index} data={item} />);
+}
 
 // GOOD - Use stable unique ID
-{items.map(item => (
-  <Item key={item.id} data={item} />
-))}
+{
+  items.map((item) => <Item key={item.id} data={item} />);
+}
 ```
 
 ### Avoid: Prop Drilling
@@ -680,7 +726,7 @@ const style = useMemo(() => ({ color: theme.primary }), [theme.primary]);
       <UserInfo user={user} />
     </Sidebar>
   </Layout>
-</App>
+</App>;
 
 // GOOD - Use Context
 const UserContext = createContext<User | null>(null);
@@ -709,17 +755,17 @@ function UserInfo() {
 // BAD - Mutates state directly
 const addItem = (item: Item) => {
   items.push(item); // WRONG
-  setItems(items);  // Won't trigger re-render
+  setItems(items); // Won't trigger re-render
 };
 
 // GOOD - Create new array
 const addItem = (item: Item) => {
-  setItems(prev => [...prev, item]);
+  setItems((prev) => [...prev, item]);
 };
 
 // GOOD - For objects
 const updateUser = (field: string, value: string) => {
-  setUser(prev => ({ ...prev, [field]: value }));
+  setUser((prev) => ({ ...prev, [field]: value }));
 };
 ```
 
@@ -741,6 +787,6 @@ const total = items.reduce((sum, item) => sum + item.price, 0);
 // Or useMemo for expensive calculations
 const total = useMemo(
   () => items.reduce((sum, item) => sum + item.price, 0),
-  [items]
+  [items],
 );
 ```

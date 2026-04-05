@@ -46,7 +46,7 @@ export async function createUser(data: UserInput) {
 // src/services/userService.ts
 export function createUserService(
   db: PrismaClient,
-  emailService: EmailService
+  emailService: EmailService,
 ) {
   return {
     async createUser(data: UserInput) {
@@ -168,14 +168,14 @@ function CheckoutForm() {
 
 ### Component Design for Testability
 
-| Pattern | Testability | Example |
-|---------|-------------|---------|
-| Props over context | High | `<Button disabled={!valid}>` |
-| Callbacks over side effects | High | `onSubmit={handleSubmit}` |
-| Controlled components | High | `<Input value={value} onChange={...}>` |
-| Render props | Medium | `<DataProvider render={data => ...}>` |
-| Internal state | Low | `const [x, setX] = useState()` |
-| Global state | Low | `useGlobalStore()` |
+| Pattern                     | Testability | Example                                |
+| --------------------------- | ----------- | -------------------------------------- |
+| Props over context          | High        | `<Button disabled={!valid}>`           |
+| Callbacks over side effects | High        | `onSubmit={handleSubmit}`              |
+| Controlled components       | High        | `<Input value={value} onChange={...}>` |
+| Render props                | Medium      | `<DataProvider render={data => ...}>`  |
+| Internal state              | Low         | `const [x, setX] = useState()`         |
+| Global state                | Low         | `useGlobalStore()`                     |
 
 ---
 
@@ -241,12 +241,12 @@ describe('UserService', () => {
 
 ### Anti-patterns to Avoid
 
-| Bad | Good | Why |
-|-----|------|-----|
-| `it('works')` | `it('returns sum of two numbers')` | Describes behavior |
-| `it('test 1')` | `it('handles empty array')` | Specific scenario |
-| `it('should do stuff')` | `it('should validate email format')` | Clear expectation |
-| Duplicating code in name | Describing behavior | Readable output |
+| Bad                      | Good                                 | Why                |
+| ------------------------ | ------------------------------------ | ------------------ |
+| `it('works')`            | `it('returns sum of two numbers')`   | Describes behavior |
+| `it('test 1')`           | `it('handles empty array')`          | Specific scenario  |
+| `it('should do stuff')`  | `it('should validate email format')` | Clear expectation  |
+| Duplicating code in name | Describing behavior                  | Readable output    |
 
 ---
 
@@ -413,15 +413,15 @@ describe('ProductList', () => {
 
 ### Isolation Checklist
 
-| Aspect | Solution |
-|--------|----------|
-| Global state | Reset in beforeEach |
-| Timers | jest.useFakeTimers() + jest.useRealTimers() |
-| DOM | RTL's cleanup (automatic) |
-| Database | Truncate tables or use transactions |
-| API mocks | server.resetHandlers() |
-| File system | Use temp directories, clean up in afterEach |
-| Environment vars | Restore in afterEach |
+| Aspect           | Solution                                    |
+| ---------------- | ------------------------------------------- |
+| Global state     | Reset in beforeEach                         |
+| Timers           | jest.useFakeTimers() + jest.useRealTimers() |
+| DOM              | RTL's cleanup (automatic)                   |
+| Database         | Truncate tables or use transactions         |
+| API mocks        | server.resetHandlers()                      |
+| File system      | Use temp directories, clean up in afterEach |
+| Environment vars | Restore in afterEach                        |
 
 ---
 
@@ -468,7 +468,7 @@ it('sorts users alphabetically', () => {
     createUser({ name: 'Bob' }),
   ];
   const sorted = sortUsers(users);
-  expect(sorted.map(u => u.name)).toEqual(['Alice', 'Bob', 'Charlie']);
+  expect(sorted.map((u) => u.name)).toEqual(['Alice', 'Bob', 'Charlie']);
 });
 ```
 
@@ -521,8 +521,8 @@ it('fetches data', async () => {
 it('fetches data', async () => {
   server.use(
     rest.get('https://api.example.com/data', (req, res, ctx) =>
-      res(ctx.json({ value: 42 }))
-    )
+      res(ctx.json({ value: 42 })),
+    ),
   );
 
   const data = await fetchData();
@@ -539,10 +539,7 @@ module.exports = {
   testEnvironment: 'jsdom',
 
   // Add reporters to track flaky tests
-  reporters: [
-    'default',
-    ['jest-junit', { outputDirectory: './reports' }],
-  ],
+  reporters: ['default', ['jest-junit', { outputDirectory: './reports' }]],
 };
 
 // Run tests multiple times
@@ -575,18 +572,21 @@ Questions to ask during code review to ensure testable code.
 ### Testability Checklist
 
 **Functions and Methods:**
+
 - [ ] Does it have a single responsibility?
 - [ ] Are dependencies injected?
 - [ ] Can it be tested without mocking internals?
 - [ ] Does it return a value or have observable side effects?
 
 **Components:**
+
 - [ ] Are props descriptive and minimal?
 - [ ] Can behavior be triggered via user events?
 - [ ] Are loading/error states exposed?
 - [ ] Can it be rendered without a full app context?
 
 **State Management:**
+
 - [ ] Is state minimal and derived where possible?
 - [ ] Can state changes be triggered and observed?
 - [ ] Are side effects separated from reducers?
@@ -594,6 +594,7 @@ Questions to ask during code review to ensure testable code.
 ### Review Comments
 
 **Before:**
+
 ```typescript
 // Hard to test - embedded dependency
 function processPayment(order: Order) {
@@ -606,12 +607,15 @@ function processPayment(order: Order) {
 ```
 
 **Review Comment:**
+
 > Consider injecting the payment processor to improve testability:
+>
 > ```typescript
 > function processPayment(order: Order, processor: PaymentProcessor) {
 >   return processor.charge(order.total, 'usd');
 > }
 > ```
+>
 > This allows testing with a mock processor without hitting Stripe's API.
 
 ---
@@ -674,7 +678,8 @@ function renderWithUser(ui: ReactElement, user = createUser()) {
 // Update factory first
 export function createUserResponse(overrides = {}) {
   return {
-    user: {  // New nested structure
+    user: {
+      // New nested structure
       id: '1',
       name: 'Test User',
       ...overrides,
@@ -724,6 +729,7 @@ Techniques for investigating test failures.
 ### Jest Debugging
 
 **Run single test:**
+
 ```bash
 # By name pattern
 npx jest -t "should validate email"
@@ -736,12 +742,14 @@ npx jest --watch
 ```
 
 **Debug with Node inspector:**
+
 ```bash
 node --inspect-brk node_modules/.bin/jest --runInBand
 # Open chrome://inspect in Chrome
 ```
 
 **Verbose output:**
+
 ```bash
 npx jest --verbose --no-coverage
 ```
@@ -784,6 +792,7 @@ npx playwright show-trace trace.zip
 ```
 
 **Pause in test:**
+
 ```typescript
 test('debug this', async ({ page }) => {
   await page.goto('/');
@@ -794,13 +803,13 @@ test('debug this', async ({ page }) => {
 
 ### Common Failure Patterns
 
-| Symptom | Likely Cause | Debug Approach |
-|---------|--------------|----------------|
-| "Unable to find element" | Wrong query or element not rendered | `screen.debug()`, check async |
-| "Expected X, received Y" | Logic error or stale mock | Log intermediate values |
-| "Timeout exceeded" | Slow async or missing await | Increase timeout, check promises |
-| "Cannot read property of undefined" | Missing mock or setup | Check beforeEach, mock returns |
-| Passes locally, fails in CI | Environment difference | Check env vars, timing |
+| Symptom                             | Likely Cause                        | Debug Approach                   |
+| ----------------------------------- | ----------------------------------- | -------------------------------- |
+| "Unable to find element"            | Wrong query or element not rendered | `screen.debug()`, check async    |
+| "Expected X, received Y"            | Logic error or stale mock           | Log intermediate values          |
+| "Timeout exceeded"                  | Slow async or missing await         | Increase timeout, check promises |
+| "Cannot read property of undefined" | Missing mock or setup               | Check beforeEach, mock returns   |
+| Passes locally, fails in CI         | Environment difference              | Check env vars, timing           |
 
 ### Investigating Flaky Failures
 
@@ -829,30 +838,30 @@ Measure test suite effectiveness and track quality improvements.
 
 **Coverage Metrics:**
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Line coverage | 80% | `jest --coverage` |
-| Branch coverage | 75% | `jest --coverage` |
-| Function coverage | 80% | `jest --coverage` |
-| Critical path coverage | 95% | Custom tracking |
+| Metric                 | Target | Measurement       |
+| ---------------------- | ------ | ----------------- |
+| Line coverage          | 80%    | `jest --coverage` |
+| Branch coverage        | 75%    | `jest --coverage` |
+| Function coverage      | 80%    | `jest --coverage` |
+| Critical path coverage | 95%    | Custom tracking   |
 
 **Test Suite Health:**
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Test pass rate | 100% | CI reports |
-| Flaky test rate | <1% | Track retries |
-| Test execution time | <5 min | CI timing |
-| Tests per component | ≥3 | Test count / components |
+| Metric              | Target | Measurement             |
+| ------------------- | ------ | ----------------------- |
+| Test pass rate      | 100%   | CI reports              |
+| Flaky test rate     | <1%    | Track retries           |
+| Test execution time | <5 min | CI timing               |
+| Tests per component | ≥3     | Test count / components |
 
 **Defect Metrics:**
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Defects found in testing | >70% | Bug tracking |
-| Defects escaped to prod | <10% | Production bugs |
-| Regression rate | <5% | Bugs reintroduced |
-| Mean time to detect | <1 day | Bug timestamps |
+| Metric                   | Target | Measurement       |
+| ------------------------ | ------ | ----------------- |
+| Defects found in testing | >70%   | Bug tracking      |
+| Defects escaped to prod  | <10%   | Production bugs   |
+| Regression rate          | <5%    | Bugs reintroduced |
+| Mean time to detect      | <1 day | Bug timestamps    |
 
 ### Dashboard Example
 

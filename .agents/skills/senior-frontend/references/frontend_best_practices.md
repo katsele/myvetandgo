@@ -46,7 +46,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
     if (isOpen) {
       // Focus first focusable element
       const focusable = modalRef.current?.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       );
       (focusable?.[0] as HTMLElement)?.focus();
 
@@ -178,7 +178,7 @@ module.exports = {
 <span className="text-red-600">
   <ErrorIcon aria-hidden="true" />
   <span>Error: Invalid input</span>
-</span>
+</span>;
 ```
 
 ### Screen Reader Only Content
@@ -219,7 +219,9 @@ import { Button } from './Button';
 describe('Button', () => {
   it('renders with correct text', () => {
     render(<Button>Click me</Button>);
-    expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Click me' }),
+    ).toBeInTheDocument();
   });
 
   it('calls onClick when clicked', async () => {
@@ -239,7 +241,11 @@ describe('Button', () => {
   });
 
   it('shows loading text when loading', () => {
-    render(<Button isLoading loadingText="Submitting...">Submit</Button>);
+    render(
+      <Button isLoading loadingText="Submitting...">
+        Submit
+      </Button>,
+    );
     expect(screen.getByText('Submitting...')).toBeInTheDocument();
   });
 });
@@ -314,7 +320,7 @@ describe('LoginForm', () => {
     render(
       <AuthProvider>
         <LoginForm />
-      </AuthProvider>
+      </AuthProvider>,
     );
 
     await user.type(screen.getByLabelText(/email/i), 'test@example.com');
@@ -332,13 +338,15 @@ describe('LoginForm', () => {
     render(
       <AuthProvider>
         <LoginForm />
-      </AuthProvider>
+      </AuthProvider>,
     );
 
     await user.click(screen.getByRole('button', { name: /sign in/i }));
 
     expect(await screen.findByText(/email is required/i)).toBeInTheDocument();
-    expect(await screen.findByText(/password is required/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/password is required/i),
+    ).toBeInTheDocument();
     expect(mockLogin).not.toHaveBeenCalled();
   });
 });
@@ -440,7 +448,10 @@ type AsyncState<T> =
   | { status: 'success'; data: T }
   | { status: 'error'; error: Error };
 
-function DataDisplay<T>({ state, render }: {
+function DataDisplay<T>({
+  state,
+  render,
+}: {
   state: AsyncState<T>;
   render: (data: T) => React.ReactNode;
 }) {
@@ -469,7 +480,12 @@ interface ListProps<T> {
   emptyMessage?: string;
 }
 
-function List<T>({ items, renderItem, keyExtractor, emptyMessage }: ListProps<T>) {
+function List<T>({
+  items,
+  renderItem,
+  keyExtractor,
+  emptyMessage,
+}: ListProps<T>) {
   if (items.length === 0) {
     return <p className="text-muted">{emptyMessage || 'No items'}</p>;
   }
@@ -488,7 +504,7 @@ function List<T>({ items, renderItem, keyExtractor, emptyMessage }: ListProps<T>
   items={users}
   keyExtractor={(user) => user.id}
   renderItem={(user) => <UserCard user={user} />}
-/>
+/>;
 ```
 
 ### Type Guards
@@ -513,7 +529,9 @@ function isAdmin(user: User): user is Admin {
 function UserBadge({ user }: { user: User }) {
   if (isAdmin(user)) {
     // TypeScript knows user is Admin here
-    return <Badge variant="admin">Admin ({user.permissions.length} perms)</Badge>;
+    return (
+      <Badge variant="admin">Admin ({user.permissions.length} perms)</Badge>
+    );
   }
 
   return <Badge>User</Badge>;
@@ -734,7 +752,7 @@ React escapes content by default, which prevents most XSS attacks. When you need
 
 ```tsx
 // React escapes by default - this is safe
-<div>{userInput}</div>
+<div>{userInput}</div>;
 
 // When you must render HTML, sanitize first
 import DOMPurify from 'dompurify';
@@ -756,30 +774,45 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const schema = z.object({
-  email: z.string().email('Invalid email address'),
-  password: z.string()
-    .min(8, 'Password must be at least 8 characters')
-    .regex(/[A-Z]/, 'Password must contain uppercase letter')
-    .regex(/[0-9]/, 'Password must contain number'),
-  confirmPassword: z.string(),
-}).refine((data) => data.password === data.confirmPassword, {
-  message: 'Passwords do not match',
-  path: ['confirmPassword'],
-});
+const schema = z
+  .object({
+    email: z.string().email('Invalid email address'),
+    password: z
+      .string()
+      .min(8, 'Password must be at least 8 characters')
+      .regex(/[A-Z]/, 'Password must contain uppercase letter')
+      .regex(/[0-9]/, 'Password must contain number'),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
+  });
 
 type FormData = z.infer<typeof schema>;
 
 function RegisterForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input {...register('email')} error={errors.email?.message} />
-      <Input type="password" {...register('password')} error={errors.password?.message} />
-      <Input type="password" {...register('confirmPassword')} error={errors.confirmPassword?.message} />
+      <Input
+        type="password"
+        {...register('password')}
+        error={errors.password?.message}
+      />
+      <Input
+        type="password"
+        {...register('confirmPassword')}
+        error={errors.confirmPassword?.message}
+      />
       <Button type="submit">Register</Button>
     </form>
   );
@@ -797,7 +830,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export async function GET() {
   const response = await fetch('https://api.example.com/data', {
     headers: {
-      'Authorization': `Bearer ${process.env.API_SECRET}`, // Server-side only
+      Authorization: `Bearer ${process.env.API_SECRET}`, // Server-side only
     },
   });
 
