@@ -59,11 +59,13 @@ La formation continue vétérinaire en Europe francophone et néerlandophone sou
 **Profil :** Vétérinaire animaux de compagnie, 3–15 ans d'expérience, exerçant en clinique généraliste en France, Belgique ou Suisse romande. Francophone ou néerlandophone. Souhaite approfondir 2–3 spécialités (ex : dentisterie, dermatologie, comportement) mais n'a ni le temps ni le budget pour un diplôme universitaire.
 
 **Objectifs :**
+
 - Approfondir ses compétences dans 2–3 spécialités cliniques de manière progressive
 - Obtenir ses points de FC obligatoires directement via du contenu pertinent pour sa pratique
 - Disposer d'un outil de référence rapide consultable pendant ou entre les consultations
 
 **Frustrations :**
+
 - Les webconférences de 15 min (Wizzvet) ne permettent pas d'approfondir un sujet
 - Les diplômes longs (CEAV, GPCert) coûtent 4 000–9 900 € et prennent 18+ mois
 - Les plateformes ECC (VECCS, VETgirl) sont exclusivement anglophones
@@ -74,12 +76,14 @@ La formation continue vétérinaire en Europe francophone et néerlandophone sou
 **Profil :** Directeur(trice) de clinique ou responsable formation dans un groupe vétérinaire (IVC Evidensia, AniCura, clinique multi-sites). Supervise 5–50+ vétérinaires.
 
 **Objectifs :**
+
 - Garantir la conformité FC de toute l'équipe (obligation légale)
 - Centraliser la formation sur une seule plateforme bilingue FR/NL
 - Mesurer le ROI de l'investissement formation (analytics, progression, compétences)
 - Utiliser la formation comme levier de recrutement et rétention
 
 **Frustrations :**
+
 - Aucune plateforme ne propose de tableau de bord employeur avec suivi de formation d'équipe
 - Impossible de couvrir FR et NL avec un seul outil
 - Les formations sont dispersées (Wizzvet + VetVisuals + congrès + labos)
@@ -104,38 +108,38 @@ La formation continue vétérinaire en Europe francophone et néerlandophone sou
 
 ### Objectifs business Galaxy
 
-| Objectif | Lien avec Galaxy |
-|---|---|
-| Devenir la plateforme de référence FC vétérinaire en Europe francophone/néerlandophone | Couverture 20+ spécialités, bilinguisme natif, accréditations multi-pays |
-| Atteindre un ARR de 2 M€ en 5 ans | 5 500 abonnés (B2C + B2B) × 295 € ARPU effectif |
-| Créer un fossé concurrentiel défensif | IA clinique + parcours structurés + bilinguisme = combinaison non réplicable rapidement |
-| Ouvrir le canal B2B groupes vétérinaires | Licences groupées IVC Evidensia, AniCura, VetPartners — potentiel 2,25–3,15 M€ |
-| Valoriser l'expertise fondatrice ACVECC de Vet&Go | L'urgence comme base de crédibilité pour l'expansion multi-spécialités |
+| Objectif                                                                               | Lien avec Galaxy                                                                        |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Devenir la plateforme de référence FC vétérinaire en Europe francophone/néerlandophone | Couverture 20+ spécialités, bilinguisme natif, accréditations multi-pays                |
+| Atteindre un ARR de 2 M€ en 5 ans                                                      | 5 500 abonnés (B2C + B2B) × 295 € ARPU effectif                                         |
+| Créer un fossé concurrentiel défensif                                                  | IA clinique + parcours structurés + bilinguisme = combinaison non réplicable rapidement |
+| Ouvrir le canal B2B groupes vétérinaires                                               | Licences groupées IVC Evidensia, AniCura, VetPartners — potentiel 2,25–3,15 M€          |
+| Valoriser l'expertise fondatrice ACVECC de Vet&Go                                      | L'urgence comme base de crédibilité pour l'expansion multi-spécialités                  |
 
 ### Opportunité de marché
 
-*(Source : market-sizing-galaxy.md — avril 2026)*
+_(Source : market-sizing-galaxy.md — avril 2026)_
 
-| Métrique | Niche urgence (actuel) | Galaxy (ambitieux) | Facteur |
-|---|---|---|---|
-| Vétérinaires cibles | ±5 800 | ±26 430 | ×4,6 |
-| TAM | ±1,15 M€ | ±7,9 M€ | **×6,9** |
-| SAM (B2C) | ±405 K€ | ±1,56 M€ | ×3,9 |
-| SAM élargi (B2C + B2B) | — | ±3,8–4,7 M€ | — |
-| SOM An 3 (réaliste) | ±147 K€ | ±747 K€ | **×5,1** |
-| SOM An 5 (réaliste) | ±300 K€ | ±2 073 K€ | **×6,9** |
+| Métrique               | Niche urgence (actuel) | Galaxy (ambitieux) | Facteur  |
+| ---------------------- | ---------------------- | ------------------ | -------- |
+| Vétérinaires cibles    | ±5 800                 | ±26 430            | ×4,6     |
+| TAM                    | ±1,15 M€               | ±7,9 M€            | **×6,9** |
+| SAM (B2C)              | ±405 K€                | ±1,56 M€           | ×3,9     |
+| SAM élargi (B2C + B2B) | —                      | ±3,8–4,7 M€        | —        |
+| SOM An 3 (réaliste)    | ±147 K€                | ±747 K€            | **×5,1** |
+| SOM An 5 (réaliste)    | ±300 K€                | ±2 073 K€          | **×6,9** |
 
 ### Paysage concurrentiel
 
-*(Source : competitor-analysis-galaxy.md — avril 2026)*
+_(Source : competitor-analysis-galaxy.md — avril 2026)_
 
-| Concurrent | Position | Menace Galaxy |
-|---|---|---|
-| **Wizzvet** | Leader FR e-learning, 12 000 membres, mais format court + pas de parcours structurés | **Élevée** |
-| **VetVisuals** | Leader NL, 575 €/an, LMS daté | **Moyenne** |
-| **ENVF-FTLV** | Projet France 2030, digitalisation lente des 4 ENV | **Moyenne-Élevée (2028+)** |
-| **VETgirl** | Benchmark tarifaire mondial (269 $/an), anglophone uniquement | **Moyenne** |
-| **VIN** | Référence mondiale communauté + FC, 780 $/an, anglophone | **Moyenne-Faible** |
+| Concurrent     | Position                                                                             | Menace Galaxy              |
+| -------------- | ------------------------------------------------------------------------------------ | -------------------------- |
+| **Wizzvet**    | Leader FR e-learning, 12 000 membres, mais format court + pas de parcours structurés | **Élevée**                 |
+| **VetVisuals** | Leader NL, 575 €/an, LMS daté                                                        | **Moyenne**                |
+| **ENVF-FTLV**  | Projet France 2030, digitalisation lente des 4 ENV                                   | **Moyenne-Élevée (2028+)** |
+| **VETgirl**    | Benchmark tarifaire mondial (269 $/an), anglophone uniquement                        | **Moyenne**                |
+| **VIN**        | Référence mondiale communauté + FC, 780 $/an, anglophone                             | **Moyenne-Faible**         |
 
 **Constat stratégique :** Aucun concurrent ne combine parcours structurés + bilinguisme FR/NL + IA clinique + accréditation multi-pays + prix compétitif.
 
@@ -286,6 +290,7 @@ Identique au PRD niche urgence v2 : structure en cursus, navigation, profils uti
 ### Métrique primaire Galaxy
 
 **ARR (Annual Recurring Revenue)**
+
 - An 1 : 50 K€
 - An 3 : 747 K€
 - An 5 : 2 073 K€
@@ -293,40 +298,40 @@ Identique au PRD niche urgence v2 : structure en cursus, navigation, profils uti
 
 ### Métriques secondaires
 
-| Métrique | Cible An 1 | Cible An 3 | Cible An 5 |
-|---|---|---|---|
-| Abonnés totaux (B2C + B2B) | 200 | 2 200 | 5 500 |
-| Taux d'utilisation mensuelle | 80 % | 75 % | 70 % |
-| Spécialités couvertes | 3 | 10 | 20+ |
-| Points FC moyens obtenus / vétérinaire / an | 10 | 15 | 18 |
-| NPS | > 40 | > 45 | > 50 |
-| Churn annuel | < 20 % | < 15 % | < 12 % |
-| Revenus B2B / revenus totaux | 0 % | 16 % | 22 % |
-| Temps de recherche clinique (IA) | — | < 30 sec | < 15 sec |
+| Métrique                                    | Cible An 1 | Cible An 3 | Cible An 5 |
+| ------------------------------------------- | ---------- | ---------- | ---------- |
+| Abonnés totaux (B2C + B2B)                  | 200        | 2 200      | 5 500      |
+| Taux d'utilisation mensuelle                | 80 %       | 75 %       | 70 %       |
+| Spécialités couvertes                       | 3          | 10         | 20+        |
+| Points FC moyens obtenus / vétérinaire / an | 10         | 15         | 18         |
+| NPS                                         | > 40       | > 45       | > 50       |
+| Churn annuel                                | < 20 %     | < 15 %     | < 12 %     |
+| Revenus B2B / revenus totaux                | 0 %        | 16 %       | 22 %       |
+| Temps de recherche clinique (IA)            | —          | < 30 sec   | < 15 sec   |
 
 ### Métriques de garde-fou
 
-| Métrique | Seuil d'alerte |
-|---|---|
-| Churn mensuel | > 2,5 % (annualisé > 26 %) |
-| NPS | < 30 |
-| Taux de dismissal quiz | > 50 % |
-| Temps de chargement vidéo | > 3 sec |
+| Métrique                        | Seuil d'alerte             |
+| ------------------------------- | -------------------------- |
+| Churn mensuel                   | > 2,5 % (annualisé > 26 %) |
+| NPS                             | < 30                       |
+| Taux de dismissal quiz          | > 50 %                     |
+| Temps de chargement vidéo       | > 3 sec                    |
 | Coût d'acquisition client (CAC) | > 150 € (payback > 6 mois) |
 
 ---
 
 ## 7. Hors périmètre
 
-| Fonctionnalité exclue | Raison |
-|---|---|
-| Contenu animaux de production / équins | Marché différent, autres experts, autre audience |
-| Diplômes longs type CEAV ou GPCert | Territoire des ENVF et Improve International |
-| FC gratuite pharma (nutrition, parasitologie, vaccination) | Saturé par le contenu gratuit, ROI trop faible |
-| Application mobile native (Phase 1–3) | Responsive web first ; app native Phase 5 si adoption mobile > 40 % |
-| Marketplace de formateurs (modèle Udemy) | Contrôle éditorial strict — les formateurs sont recrutés et validés, pas auto-publiés |
-| Messagerie temps réel entre utilisateurs | Complexité disproportionnée ; commentaires contextuels en Phase 5 |
-| Intégration avec les systèmes RH des groupes vétérinaires | Trop spécifique ; export Excel/PDF suffit dans un premier temps |
+| Fonctionnalité exclue                                      | Raison                                                                                |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Contenu animaux de production / équins                     | Marché différent, autres experts, autre audience                                      |
+| Diplômes longs type CEAV ou GPCert                         | Territoire des ENVF et Improve International                                          |
+| FC gratuite pharma (nutrition, parasitologie, vaccination) | Saturé par le contenu gratuit, ROI trop faible                                        |
+| Application mobile native (Phase 1–3)                      | Responsive web first ; app native Phase 5 si adoption mobile > 40 %                   |
+| Marketplace de formateurs (modèle Udemy)                   | Contrôle éditorial strict — les formateurs sont recrutés et validés, pas auto-publiés |
+| Messagerie temps réel entre utilisateurs                   | Complexité disproportionnée ; commentaires contextuels en Phase 5                     |
+| Intégration avec les systèmes RH des groupes vétérinaires  | Trop spécifique ; export Excel/PDF suffit dans un premier temps                       |
 
 ---
 
@@ -334,41 +339,41 @@ Identique au PRD niche urgence v2 : structure en cursus, navigation, profils uti
 
 ### Dépendances critiques Galaxy
 
-| Dépendance | Type | Impact | Responsable |
-|---|---|---|---|
-| Recrutement de 50–100+ formateurs spécialistes | Contenu | **Bloquant pour Phases 2–5** — Galaxy ne peut exister sans contenu multi-spécialités | Arnaud + partenariats AFVAC |
-| Accréditations multi-pays (CFCV, CRFOMV, NGROD, SVS, CKRD) | Réglementaire | **Critique** — sans accréditation, SAM divisé par 3–4× | Camille + démarches externes |
-| Certification Qualiopi (France) | Réglementaire | **Bloquant pour marché français** — accès FIF-PL, OPCO | Arnaud |
-| Budget de développement élargi (vs. niche) | Business | **Bloquant** — Galaxy nécessite un investissement 3–5× supérieur au niche | David (direction) |
-| Partenariats AFVAC / sociétés savantes | Contenu + crédibilité | Accélérateur majeur pour recrutement de formateurs et parcours hybrides | Arnaud + Camille |
-| Production de contenu NL natif | Contenu | Nécessaire pour le marché néerlandophone (pas seulement des sous-titres) | À recruter |
+| Dépendance                                                 | Type                  | Impact                                                                               | Responsable                  |
+| ---------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------ | ---------------------------- |
+| Recrutement de 50–100+ formateurs spécialistes             | Contenu               | **Bloquant pour Phases 2–5** — Galaxy ne peut exister sans contenu multi-spécialités | Arnaud + partenariats AFVAC  |
+| Accréditations multi-pays (CFCV, CRFOMV, NGROD, SVS, CKRD) | Réglementaire         | **Critique** — sans accréditation, SAM divisé par 3–4×                               | Camille + démarches externes |
+| Certification Qualiopi (France)                            | Réglementaire         | **Bloquant pour marché français** — accès FIF-PL, OPCO                               | Arnaud                       |
+| Budget de développement élargi (vs. niche)                 | Business              | **Bloquant** — Galaxy nécessite un investissement 3–5× supérieur au niche            | David (direction)            |
+| Partenariats AFVAC / sociétés savantes                     | Contenu + crédibilité | Accélérateur majeur pour recrutement de formateurs et parcours hybrides              | Arnaud + Camille             |
+| Production de contenu NL natif                             | Contenu               | Nécessaire pour le marché néerlandophone (pas seulement des sous-titres)             | À recruter                   |
 
 ### Risques Galaxy
 
-| Risque | Probabilité | Impact | Mitigation |
-|---|---|---|---|
-| Incapacité à recruter suffisamment de formateurs spécialistes | Moyenne | **Critique** — bloque l'expansion multi-spécialités | Partenariats AFVAC/sociétés savantes, rémunération attractive, co-production |
-| Wizzvet lance des parcours structurés | Moyenne | **Élevé** — élimine un différenciateur clé | Avancer vite sur les blue oceans (dentisterie, comportement, NAC), IA comme barrière |
-| Budget insuffisant pour l'ambition Galaxy | Élevée | **Critique** — Galaxy tronqué ou abandonné | Phasing progressif, prouver le modèle en niche avant d'investir |
-| Accréditations multi-pays retardées > 24 mois | Moyenne | **Élevé** — SOM amputé de 60–70 % | Démarches parallèles dès An 1, consultant réglementaire |
-| ENVF-FTLV accélère sa digitalisation (2028+) | Moyenne | **Élevé** — concurrent institutionnel avec crédibilité académique | Position établie avant 2028, différenciation IA + bilinguisme |
-| Churn trop élevé (> 20 %/an) | Moyenne | **Moyen** — viabilité repoussée | Couche référence quotidienne (IA) pour réduire le churn, NPS > 40 |
-| Sous-estimation des coûts de production de contenu | Élevée | **Moyen** — timeline repoussée de 12–18 mois | Budget de contingence 30 %, priorisation des spécialités à fort ROI |
+| Risque                                                        | Probabilité | Impact                                                            | Mitigation                                                                           |
+| ------------------------------------------------------------- | ----------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Incapacité à recruter suffisamment de formateurs spécialistes | Moyenne     | **Critique** — bloque l'expansion multi-spécialités               | Partenariats AFVAC/sociétés savantes, rémunération attractive, co-production         |
+| Wizzvet lance des parcours structurés                         | Moyenne     | **Élevé** — élimine un différenciateur clé                        | Avancer vite sur les blue oceans (dentisterie, comportement, NAC), IA comme barrière |
+| Budget insuffisant pour l'ambition Galaxy                     | Élevée      | **Critique** — Galaxy tronqué ou abandonné                        | Phasing progressif, prouver le modèle en niche avant d'investir                      |
+| Accréditations multi-pays retardées > 24 mois                 | Moyenne     | **Élevé** — SOM amputé de 60–70 %                                 | Démarches parallèles dès An 1, consultant réglementaire                              |
+| ENVF-FTLV accélère sa digitalisation (2028+)                  | Moyenne     | **Élevé** — concurrent institutionnel avec crédibilité académique | Position établie avant 2028, différenciation IA + bilinguisme                        |
+| Churn trop élevé (> 20 %/an)                                  | Moyenne     | **Moyen** — viabilité repoussée                                   | Couche référence quotidienne (IA) pour réduire le churn, NPS > 40                    |
+| Sous-estimation des coûts de production de contenu            | Élevée      | **Moyen** — timeline repoussée de 12–18 mois                      | Budget de contingence 30 %, priorisation des spécialités à fort ROI                  |
 
 ---
 
 ## 9. Questions ouvertes Galaxy
 
-| # | Question | Statut | Décideur |
-|---|---|---|---|
-| 1 | Quel est le budget total disponible pour la vision Galaxy (5 ans) ? | **À résoudre en priorité** | David |
-| 2 | Les partenariats AFVAC/sociétés savantes sont-ils réalistes ? Quelle rémunération pour les formateurs ? | À explorer | Arnaud + Camille |
-| 3 | Faut-il créer une entité juridique distincte pour l'activité commerciale Galaxy (vs. Vet&Go clinique) ? | À décider | David + juridique |
-| 4 | Le modèle de tarification B2B (199 €/siège 2–5, 169 €/siège 6–15, 129–149 €/siège 16+) est-il aligné avec les attentes des groupes ? | À valider | Prospection pilote |
-| 5 | Qualiopi peut-il être obtenu par Vet&Go directement ou faut-il un organisme de formation dédié ? | À investiguer | Arnaud |
-| 6 | Le contenu NL doit-il être produit nativement ou traduit/doublé depuis le FR ? | À décider | Arnaud + Elizabeth |
-| 7 | Faut-il un éditeur(trice) en chef pour Galaxy (rôle dédié) ? | À décider | Arnaud + David |
-| 8 | Quel est le seuil de go/no-go entre niche et Galaxy ? (ex : « Si 200 abonnés et NPS > 40 en An 1, on lance Galaxy ») | **À définir** | David + Arnaud |
+| #   | Question                                                                                                                             | Statut                     | Décideur           |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- | ------------------ |
+| 1   | Quel est le budget total disponible pour la vision Galaxy (5 ans) ?                                                                  | **À résoudre en priorité** | David              |
+| 2   | Les partenariats AFVAC/sociétés savantes sont-ils réalistes ? Quelle rémunération pour les formateurs ?                              | À explorer                 | Arnaud + Camille   |
+| 3   | Faut-il créer une entité juridique distincte pour l'activité commerciale Galaxy (vs. Vet&Go clinique) ?                              | À décider                  | David + juridique  |
+| 4   | Le modèle de tarification B2B (199 €/siège 2–5, 169 €/siège 6–15, 129–149 €/siège 16+) est-il aligné avec les attentes des groupes ? | À valider                  | Prospection pilote |
+| 5   | Qualiopi peut-il être obtenu par Vet&Go directement ou faut-il un organisme de formation dédié ?                                     | À investiguer              | Arnaud             |
+| 6   | Le contenu NL doit-il être produit nativement ou traduit/doublé depuis le FR ?                                                       | À décider                  | Arnaud + Elizabeth |
+| 7   | Faut-il un éditeur(trice) en chef pour Galaxy (rôle dédié) ?                                                                         | À décider                  | Arnaud + David     |
+| 8   | Quel est le seuil de go/no-go entre niche et Galaxy ? (ex : « Si 200 abonnés et NPS > 40 en An 1, on lance Galaxy »)                 | **À définir**              | David + Arnaud     |
 
 ---
 
@@ -410,14 +415,14 @@ Réglementaire (en parallèle) ────────────────�
 
 ## Annexe B : Documents de référence
 
-| Document | Contenu | Fichier |
-|---|---|---|
-| Market Sizing Galaxy | TAM/SAM/SOM multi-spécialités, 5 pays, 5 ans | `galaxy/market-sizing-galaxy.md` |
-| Competitor Analysis Galaxy | 5 concurrents directs, matrice positionnement, différenciation | `galaxy/competitor-analysis-galaxy.md` |
-| PRD niche urgence | PRD v2 original (fondation de Galaxy) | `prd-myvetandgo.md` |
-| Deep Market Research v2 | Analyse complète par pays, spécialités blue ocean, benchmarks tarifaires | `docs/deep-market-research-v2.md` |
-| Architecture niche | Architecture technique v2 (base de Galaxy) | `architecture-myvetandgo.md` |
+| Document                   | Contenu                                                                  | Fichier                                |
+| -------------------------- | ------------------------------------------------------------------------ | -------------------------------------- |
+| Market Sizing Galaxy       | TAM/SAM/SOM multi-spécialités, 5 pays, 5 ans                             | `galaxy/market-sizing-galaxy.md`       |
+| Competitor Analysis Galaxy | 5 concurrents directs, matrice positionnement, différenciation           | `galaxy/competitor-analysis-galaxy.md` |
+| PRD niche urgence          | PRD v2 original (fondation de Galaxy)                                    | `prd-myvetandgo.md`                    |
+| Deep Market Research v2    | Analyse complète par pays, spécialités blue ocean, benchmarks tarifaires | `docs/deep-market-research-v2.md`      |
+| Architecture niche         | Architecture technique v2 (base de Galaxy)                               | `architecture-myvetandgo.md`           |
 
 ---
 
-*PRD Galaxy v1 — avril 2026. Ce document définit la vision ambitieuse « Galaxy » de My Vet&Go. La trajectoire niche → Galaxy est conditionnée au succès de la Phase 1 (urgence) et à la validation du modèle (seuil go/no-go à définir, question ouverte #8).*
+_PRD Galaxy v1 — avril 2026. Ce document définit la vision ambitieuse « Galaxy » de My Vet&Go. La trajectoire niche → Galaxy est conditionnée au succès de la Phase 1 (urgence) et à la validation du modèle (seuil go/no-go à définir, question ouverte #8)._

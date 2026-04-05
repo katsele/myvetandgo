@@ -13,16 +13,16 @@ This document extends the niche emergency architecture (`architecture-myvetandgo
 
 **Key architectural changes from niche to Galaxy:**
 
-| Concern | Niche | Galaxy | Architectural Impact |
-|---|---|---|---|
-| Content scope | 1 specialty (ECC) | 20+ specialties | Data model expansion (Specialty entity), content pipeline |
-| User scale | ±500 users | ±5,500+ users | Caching strategy, CDN, DB optimization |
-| B2B / multi-tenant | Single org (Vet&Go) | Multi-org + enterprise groups | Tenant isolation, license management, RBAC expansion |
-| AI search corpus | ±100 videos, ±10K segments | ±2,000+ videos, ±200K+ segments | Vector index scaling, embedding pipeline, cost management |
-| Localization | FR primary + NL subtitles | Native FR + NL (UI, content, search) | Full i18n infrastructure, per-locale content variants |
-| Payments | Internal only → simple Stripe | Multi-tier subscriptions + B2B invoicing | Stripe Connect / billing engine, tax compliance (5 countries) |
-| Compliance | Belgian accreditation | 5-country accreditation + Qualiopi + GDPR multi-jurisdiction | Per-country CE point rules engine, data residency |
-| Content production | Small editorial team | 50–100+ external contributors | Contributor portal, review workflow, rights management |
+| Concern            | Niche                         | Galaxy                                                       | Architectural Impact                                          |
+| ------------------ | ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------- |
+| Content scope      | 1 specialty (ECC)             | 20+ specialties                                              | Data model expansion (Specialty entity), content pipeline     |
+| User scale         | ±500 users                    | ±5,500+ users                                                | Caching strategy, CDN, DB optimization                        |
+| B2B / multi-tenant | Single org (Vet&Go)           | Multi-org + enterprise groups                                | Tenant isolation, license management, RBAC expansion          |
+| AI search corpus   | ±100 videos, ±10K segments    | ±2,000+ videos, ±200K+ segments                              | Vector index scaling, embedding pipeline, cost management     |
+| Localization       | FR primary + NL subtitles     | Native FR + NL (UI, content, search)                         | Full i18n infrastructure, per-locale content variants         |
+| Payments           | Internal only → simple Stripe | Multi-tier subscriptions + B2B invoicing                     | Stripe Connect / billing engine, tax compliance (5 countries) |
+| Compliance         | Belgian accreditation         | 5-country accreditation + Qualiopi + GDPR multi-jurisdiction | Per-country CE point rules engine, data residency             |
+| Content production | Small editorial team          | 50–100+ external contributors                                | Contributor portal, review workflow, rights management        |
 
 **Core architectural decision maintained:** Full custom (no headless CMS). Galaxy reinforces this choice — the complexity of multi-specialty curricula, multi-tenant B2B, AI search, and 5-country CE compliance is far beyond any CMS.
 
@@ -442,14 +442,14 @@ Decision criteria: If mobile usage exceeds 40% of sessions by Phase 4, invest in
 
 CE point calculation varies by country:
 
-| Country | Body | Points/hour | E-learning cap | Interactive bonus |
-|---|---|---|---|---|
-| Belgium (FR) | CRFOMV | 1 pt/h | 60% of total | 2 pts/h if quiz passed |
-| Belgium (NL) | NGROD/EBP | 1 pt/h | 60% of total | 2 pts/h if quiz passed |
-| France | CFCV | 1 CFC/20h | 50% of total CFC | — |
-| Luxembourg | Coll. Vét. | 1 pt/h | No cap identified | — |
-| Netherlands | CKRD | 1 pt/h | No cap (voluntary) | — |
-| Switzerland | SVS | 1 pt/h | No cap identified | — |
+| Country      | Body       | Points/hour | E-learning cap     | Interactive bonus      |
+| ------------ | ---------- | ----------- | ------------------ | ---------------------- |
+| Belgium (FR) | CRFOMV     | 1 pt/h      | 60% of total       | 2 pts/h if quiz passed |
+| Belgium (NL) | NGROD/EBP  | 1 pt/h      | 60% of total       | 2 pts/h if quiz passed |
+| France       | CFCV       | 1 CFC/20h   | 50% of total CFC   | —                      |
+| Luxembourg   | Coll. Vét. | 1 pt/h      | No cap identified  | —                      |
+| Netherlands  | CKRD       | 1 pt/h      | No cap (voluntary) | —                      |
+| Switzerland  | SVS        | 1 pt/h      | No cap identified  | —                      |
 
 Implementation: A `CePointsCalculator` service reads the user's country, applies the relevant rules from `CeAccreditation`, and generates the correct point value and certificate format.
 
@@ -458,10 +458,10 @@ Implementation: A `CePointsCalculator` service reads the user's country, applies
 function calculateCePoints(
   video: Video,
   quizPassed: boolean,
-  userCountry: Country
+  userCountry: Country,
 ): number {
   const rules = getCeRules(userCountry);
-  const basePoints = video.durationMin / 60 * rules.pointsPerHour;
+  const basePoints = (video.durationMin / 60) * rules.pointsPerHour;
 
   if (quizPassed && rules.interactiveMultiplier) {
     return basePoints * rules.interactiveMultiplier; // Belgium: ×2
@@ -473,6 +473,7 @@ function calculateCePoints(
 ### 5.3 Contributor Portal (Admin Extension)
 
 External contributors (50–100+ specialists) need a lightweight portal to:
+
 - Upload video files (→ Vimeo via API)
 - Add metadata (title, description, specialty, chapters)
 - Author quiz questions
@@ -483,17 +484,20 @@ This is implemented as an extension of the existing `/admin` routes with a `CONT
 ### 5.4 Analytics & Reporting
 
 **User-facing analytics (Profile):**
+
 - Competency radar chart (per specialty)
 - CE points tracker (per country accreditation body)
 - Learning streak and activity history
 
 **Manager dashboard (B2B):**
+
 - Team heatmap (rows = members, columns = specialties, cells = % completion)
 - CE compliance alerts (users approaching deadlines)
 - Comparative analytics (team vs. platform average)
 - Export: Excel (via `xlsx` library) and PDF
 
 **Platform analytics (Admin):**
+
 - Active users, retention cohorts, churn analysis
 - Content engagement (views, completions, quiz pass rates by specialty)
 - Revenue metrics (MRR, ARPU, LTV, CAC)
@@ -507,31 +511,31 @@ Implementation: Server Components query aggregated data. For complex analytics (
 
 ### Monthly cost estimate at scale (An 5, 5,500 users)
 
-| Service | Tier | Estimated Monthly Cost |
-|---|---|---|
-| **Vercel** | Pro | $20 + usage (±$50–100) |
-| **Neon PostgreSQL** | Pro (Scale) | $69 + storage/compute |
-| **Vimeo** | Business/Premium | $50–75 (existing) |
-| **Stripe** | 1.4% + €0.25/transaction (EU) | ±$500–800 (on ±$170K/mo revenue) |
-| **OpenAI / Anthropic (LLM)** | Pay-per-use | $800–2,500 |
-| **Cloudflare R2** | Pay-per-use | $5–20 |
-| **Resend** | Pro | $20–50 |
-| **Sentry** | Team | $26 |
-| **Upstash (Redis + Rate Limit)** | Pay-per-use | $10–30 |
-| **Domain + DNS** | — | $15 |
-| **TOTAL** | — | **$1,500–3,700/month** |
+| Service                          | Tier                          | Estimated Monthly Cost           |
+| -------------------------------- | ----------------------------- | -------------------------------- |
+| **Vercel**                       | Pro                           | $20 + usage (±$50–100)           |
+| **Neon PostgreSQL**              | Pro (Scale)                   | $69 + storage/compute            |
+| **Vimeo**                        | Business/Premium              | $50–75 (existing)                |
+| **Stripe**                       | 1.4% + €0.25/transaction (EU) | ±$500–800 (on ±$170K/mo revenue) |
+| **OpenAI / Anthropic (LLM)**     | Pay-per-use                   | $800–2,500                       |
+| **Cloudflare R2**                | Pay-per-use                   | $5–20                            |
+| **Resend**                       | Pro                           | $20–50                           |
+| **Sentry**                       | Team                          | $26                              |
+| **Upstash (Redis + Rate Limit)** | Pay-per-use                   | $10–30                           |
+| **Domain + DNS**                 | —                             | $15                              |
+| **TOTAL**                        | —                             | **$1,500–3,700/month**           |
 
 At An 5 revenue of ±$170K/month (2M€ ARR), infrastructure costs represent **0.9–2.2% of revenue** — excellent margins for a SaaS.
 
 ### Scaling triggers
 
-| Trigger | Action |
-|---|---|
-| >10K concurrent users | Add Vercel Edge Functions, evaluate Neon read replicas |
-| >500K vector segments | Evaluate Qdrant Cloud migration |
+| Trigger                 | Action                                                       |
+| ----------------------- | ------------------------------------------------------------ |
+| >10K concurrent users   | Add Vercel Edge Functions, evaluate Neon read replicas       |
+| >500K vector segments   | Evaluate Qdrant Cloud migration                              |
 | >50K search queries/day | Implement response caching (Redis), evaluate self-hosted LLM |
-| >$5K/month LLM costs | Switch to smaller/self-hosted model for common queries |
-| Mobile usage >40% | Evaluate React Native investment |
+| >$5K/month LLM costs    | Switch to smaller/self-hosted model for common queries       |
+| Mobile usage >40%       | Evaluate React Native investment                             |
 
 ---
 
@@ -607,17 +611,17 @@ Galaxy is not a rewrite — it's an extension. The migration path is:
 
 ## 10. Key Architectural Decisions
 
-| # | Decision | Rationale | Alternatives Considered |
-|---|---|---|---|
-| 1 | Full custom, no CMS | Galaxy complexity (20+ specialties, multi-tenant B2B, AI, 5-country CE rules) far exceeds any CMS | Sanity, Strapi, Contentful — all rejected |
-| 2 | Next.js monolith (no microservices) | Team size (1–5 devs) doesn't justify microservices overhead. Monolith with clear module boundaries | Separate API (Express/NestJS) + SPA |
-| 3 | pgvector over dedicated vector DB | Corpus size (200K segments) is well within pgvector's range. Avoids operational overhead | Pinecone, Qdrant, Weaviate |
-| 4 | Neon over Supabase | Low vendor coupling, DB branching for previews, own auth layer | Supabase (rejected: too much coupling) |
-| 5 | Stripe Billing over custom billing | Regulatory complexity (5 countries, VAT, invoicing) is Stripe's core competency | Custom billing engine (rejected: too risky) |
-| 6 | PWA over native mobile (until Phase 5) | Cost of dual codebase not justified until mobile usage > 40% | React Native from day 1 (rejected: premature) |
-| 7 | Dual-language fields (nameFr/nameNl) over CMS-style localization | Simple, explicit, no i18n framework overhead at the content level | gettext, i18n CMS, translation API |
-| 8 | Per-country CE rules in DB over hardcoded | Rules change (FIF-PL reduction, new accreditations). DB-driven rules are admin-configurable | Hardcoded logic (rejected: brittle) |
+| #   | Decision                                                         | Rationale                                                                                          | Alternatives Considered                       |
+| --- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| 1   | Full custom, no CMS                                              | Galaxy complexity (20+ specialties, multi-tenant B2B, AI, 5-country CE rules) far exceeds any CMS  | Sanity, Strapi, Contentful — all rejected     |
+| 2   | Next.js monolith (no microservices)                              | Team size (1–5 devs) doesn't justify microservices overhead. Monolith with clear module boundaries | Separate API (Express/NestJS) + SPA           |
+| 3   | pgvector over dedicated vector DB                                | Corpus size (200K segments) is well within pgvector's range. Avoids operational overhead           | Pinecone, Qdrant, Weaviate                    |
+| 4   | Neon over Supabase                                               | Low vendor coupling, DB branching for previews, own auth layer                                     | Supabase (rejected: too much coupling)        |
+| 5   | Stripe Billing over custom billing                               | Regulatory complexity (5 countries, VAT, invoicing) is Stripe's core competency                    | Custom billing engine (rejected: too risky)   |
+| 6   | PWA over native mobile (until Phase 5)                           | Cost of dual codebase not justified until mobile usage > 40%                                       | React Native from day 1 (rejected: premature) |
+| 7   | Dual-language fields (nameFr/nameNl) over CMS-style localization | Simple, explicit, no i18n framework overhead at the content level                                  | gettext, i18n CMS, translation API            |
+| 8   | Per-country CE rules in DB over hardcoded                        | Rules change (FIF-PL reduction, new accreditations). DB-driven rules are admin-configurable        | Hardcoded logic (rejected: brittle)           |
 
 ---
 
-*Architecture Galaxy v1 — April 2026. This document extends the niche architecture (architecture-myvetandgo.md) for the ambitious multi-specialty Galaxy vision. All niche architectural decisions remain valid and are reinforced by Galaxy requirements.*
+_Architecture Galaxy v1 — April 2026. This document extends the niche architecture (architecture-myvetandgo.md) for the ambitious multi-specialty Galaxy vision. All niche architectural decisions remain valid and are reinforced by Galaxy requirements._
