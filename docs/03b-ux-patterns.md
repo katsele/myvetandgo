@@ -16,30 +16,30 @@
 
 Based on a 4px grid with an 8px base unit. Maps directly to Tailwind's default spacing scale.
 
-| Token | Value | Tailwind | Usage |
-|---|---|---|---|
-| `--space-0` | 0px | `0` | — |
-| `--space-1` | 4px | `1` | Tight gaps, icon-to-label |
-| `--space-2` | 8px | `2` | Inline spacing, badge padding |
-| `--space-3` | 12px | `3` | Input padding, small card padding |
-| `--space-4` | 16px | `4` | Standard padding, between form fields |
-| `--space-5` | 20px | `5` | Card padding |
-| `--space-6` | 24px | `6` | Section padding (mobile) |
-| `--space-8` | 32px | `8` | Section gaps |
-| `--space-10` | 40px | `10` | Content area margins |
-| `--space-12` | 48px | `12` | Section spacing |
-| `--space-16` | 64px | `16` | Major section breaks |
-| `--space-20` | 80px | `20` | Page-level vertical rhythm |
-| `--space-24` | 96px | `24` | Hero padding |
+| Token        | Value | Tailwind | Usage                                 |
+| ------------ | ----- | -------- | ------------------------------------- |
+| `--space-0`  | 0px   | `0`      | —                                     |
+| `--space-1`  | 4px   | `1`      | Tight gaps, icon-to-label             |
+| `--space-2`  | 8px   | `2`      | Inline spacing, badge padding         |
+| `--space-3`  | 12px  | `3`      | Input padding, small card padding     |
+| `--space-4`  | 16px  | `4`      | Standard padding, between form fields |
+| `--space-5`  | 20px  | `5`      | Card padding                          |
+| `--space-6`  | 24px  | `6`      | Section padding (mobile)              |
+| `--space-8`  | 32px  | `8`      | Section gaps                          |
+| `--space-10` | 40px  | `10`     | Content area margins                  |
+| `--space-12` | 48px  | `12`     | Section spacing                       |
+| `--space-16` | 64px  | `16`     | Major section breaks                  |
+| `--space-20` | 80px  | `20`     | Page-level vertical rhythm            |
+| `--space-24` | 96px  | `24`     | Hero padding                          |
 
 ### 1.2 Grid System
 
-| Breakpoint | Name | Columns | Gutter | Margin | Max width |
-|---|---|---|---|---|---|
-| 0–639px | Mobile | 4 | 16px | 16px | 100% |
-| 640–1023px | Tablet | 8 | 24px | 24px | 100% |
-| 1024–1439px | Desktop | 12 | 24px | 40px | 100% |
-| 1440px+ | Wide | 12 | 24px | auto | 1200px |
+| Breakpoint  | Name    | Columns | Gutter | Margin | Max width |
+| ----------- | ------- | ------- | ------ | ------ | --------- |
+| 0–639px     | Mobile  | 4       | 16px   | 16px   | 100%      |
+| 640–1023px  | Tablet  | 8       | 24px   | 24px   | 100%      |
+| 1024–1439px | Desktop | 12      | 24px   | 40px   | 100%      |
+| 1440px+     | Wide    | 12      | 24px   | auto   | 1200px    |
 
 The VET&GO website uses a 1440px canvas with 120px margins and 1200px content width. My VET&GO inherits this grid for marketing/landing pages but uses a fluid layout for the application shell (sidebar + content area).
 
@@ -93,15 +93,16 @@ The VET&GO website uses a 1440px canvas with 120px margins and 1200px content wi
 
 My VET&GO uses **HugeIcons Rounded** as its primary and only icon library. The rounded stroke style aligns with the platform's personality: premium without being cold, approachable without being childish, tech-forward without being sterile. The soft terminals echo Filson Pro's rounded character, creating a cohesive visual language.
 
-| Layer | Style | Size | Stroke | Notes |
-|---|---|---|---|---|
-| **UI Navigation** | HugeIcons Rounded (Solid variant) | 20px | — | Sidebar nav, tab bar, status indicators |
-| **UI Actions** | HugeIcons Rounded (Stroke variant) | 24px | 1.5px | Toolbar actions, card actions, inline buttons |
-| **Section Eyebrows** | HugeIcons Rounded (Stroke variant) | 16px | 1.5px | Scaled down, color-matched to eyebrow text |
-| **Specialty Badges** | HugeIcons Rounded (Bulk variant) | 32–48px | — | Two-tone: accent fill + neutral stroke |
-| **Status Indicators** | System dots/rings | 8–12px | — | Semantic color fills |
+| Layer                 | Style                              | Size    | Stroke | Notes                                         |
+| --------------------- | ---------------------------------- | ------- | ------ | --------------------------------------------- |
+| **UI Navigation**     | HugeIcons Rounded (Solid variant)  | 20px    | —      | Sidebar nav, tab bar, status indicators       |
+| **UI Actions**        | HugeIcons Rounded (Stroke variant) | 24px    | 1.5px  | Toolbar actions, card actions, inline buttons |
+| **Section Eyebrows**  | HugeIcons Rounded (Stroke variant) | 16px    | 1.5px  | Scaled down, color-matched to eyebrow text    |
+| **Specialty Badges**  | HugeIcons Rounded (Bulk variant)   | 32–48px | —      | Two-tone: accent fill + neutral stroke        |
+| **Status Indicators** | System dots/rings                  | 8–12px  | —      | Semantic color fills                          |
 
 **Why not Heroicons, Lucide, or Phosphor?**
+
 - Heroicons (in the current Figma file) has a sharp, utilitarian feel — great for developer tools, but lacks the warmth My VET&GO needs.
 - Lucide is clean but generic — widely used in shadcn/ui defaults, making it hard to differentiate.
 - Phosphor Rounded is a strong alternative but has a smaller catalog. HugeIcons offers **4,000+ icons** in the Rounded style, covering medical, education, and UI categories comprehensively.
@@ -109,25 +110,25 @@ My VET&GO uses **HugeIcons Rounded** as its primary and only icon library. The r
 **Implementation:** Install via `@hugeicons/react` (tree-shakeable, each icon ~200 bytes). Use the `strokeRounded` variant for most UI, `solidRounded` for filled/active states, and `bulkRounded` for large specialty badges where a two-tone effect is needed.
 
 ```tsx
-import { Stethoscope02Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { Stethoscope02Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
-<HugeiconsIcon icon={Stethoscope02Icon} size={24} />
+<HugeiconsIcon icon={Stethoscope02Icon} size={24} />;
 ```
 
 ### 2.2 Icon Usage Rules
 
-| Context | Variant | Size | Color |
-|---|---|---|---|
-| Sidebar navigation (inactive) | Stroke Rounded | 20px | `text-muted-foreground` |
-| Sidebar navigation (active) | Solid Rounded | 20px | `text-primary` |
-| Button with label | Stroke Rounded | 18px | Inherits button text color |
-| Button icon-only | Stroke Rounded | 20px | `text-foreground` |
-| Input prefix/suffix | Stroke Rounded | 16px | `text-muted-foreground` |
-| Eyebrow label | Stroke Rounded | 16px | Same as eyebrow text |
-| Toast / alert | Stroke Rounded | 20px | Semantic color |
-| Empty state | Stroke Rounded | 48px | `text-muted-foreground` |
-| Specialty badge (course card) | Bulk Rounded | 32px | Specialty accent + neutral |
+| Context                       | Variant        | Size | Color                      |
+| ----------------------------- | -------------- | ---- | -------------------------- |
+| Sidebar navigation (inactive) | Stroke Rounded | 20px | `text-muted-foreground`    |
+| Sidebar navigation (active)   | Solid Rounded  | 20px | `text-primary`             |
+| Button with label             | Stroke Rounded | 18px | Inherits button text color |
+| Button icon-only              | Stroke Rounded | 20px | `text-foreground`          |
+| Input prefix/suffix           | Stroke Rounded | 16px | `text-muted-foreground`    |
+| Eyebrow label                 | Stroke Rounded | 16px | Same as eyebrow text       |
+| Toast / alert                 | Stroke Rounded | 20px | Semantic color             |
+| Empty state                   | Stroke Rounded | 48px | `text-muted-foreground`    |
+| Specialty badge (course card) | Bulk Rounded   | 32px | Specialty accent + neutral |
 
 **Consistency rule:** Never mix HugeIcons Rounded with other icon libraries. If an edge-case icon doesn't exist in HugeIcons, design a custom one following the Rounded style parameters: 1.5px stroke, round line caps, round line joins, 24px canvas with 2px padding.
 
@@ -135,24 +136,25 @@ import { HugeiconsIcon } from "@hugeicons/react";
 
 Each veterinary specialty uses a HugeIcons Rounded icon in its Bulk variant (two-tone: specialty accent fill + neutral stroke outline). These must be immediately recognizable by veterinary professionals and functional at 24px (sidebar nav) and 48px (card header).
 
-| Specialty | HugeIcons icon name | Notes |
-|---|---|---|
-| Urgences / ECC | `pulse-02` or `heartbeat` | ECG reference, brand heritage |
-| Anesthésie | `injection` | Syringe — universal clinical association |
-| Imagerie | `x-ray` or `scan` | Diagnostic visual |
-| Dentisterie | `dental-tooth` | Clinical, not cartoon |
-| Dermatologie | `search` + custom | Dermatoscope reference |
-| Chirurgie | `scalpel` | Clean, professional |
-| Oncologie | `microscope` | Medical precision |
-| Comportement | `brain-02` | Neurobehavioral |
-| Médecine féline | `cat` | Geometric, elegant |
-| Cardiologie | `heart-check` | Anatomical check, not emoji |
-| Neurologie | `brain` | Anatomical |
-| NAC | `rabbit` | Matches platform animal categories |
+| Specialty       | HugeIcons icon name       | Notes                                    |
+| --------------- | ------------------------- | ---------------------------------------- |
+| Urgences / ECC  | `pulse-02` or `heartbeat` | ECG reference, brand heritage            |
+| Anesthésie      | `injection`               | Syringe — universal clinical association |
+| Imagerie        | `x-ray` or `scan`         | Diagnostic visual                        |
+| Dentisterie     | `dental-tooth`            | Clinical, not cartoon                    |
+| Dermatologie    | `search` + custom         | Dermatoscope reference                   |
+| Chirurgie       | `scalpel`                 | Clean, professional                      |
+| Oncologie       | `microscope`              | Medical precision                        |
+| Comportement    | `brain-02`                | Neurobehavioral                          |
+| Médecine féline | `cat`                     | Geometric, elegant                       |
+| Cardiologie     | `heart-check`             | Anatomical check, not emoji              |
+| Neurologie      | `brain`                   | Anatomical                               |
+| NAC             | `rabbit`                  | Matches platform animal categories       |
 
 ### 2.4 Animal Category Icons (from charter)
 
 The Figma design includes circular animal category icons for the "Besoin de conseils?" section:
+
 - **Chien** (dog) — circular frame, 96×96px, photographic/illustrated style
 - **Chat** (cat) — same treatment
 - **NAC** (rabbit) — same treatment
@@ -447,12 +449,12 @@ Shortcut:     JetBrains Mono 12px, text-muted-foreground
 
 ### 4.1 Breakpoint Strategy
 
-| Breakpoint | Layout changes |
-|---|---|
-| **Mobile (< 640px)** | Single column. Bottom tab navigation. Sidebar hidden. Full-width cards. Video player stacks above sidebar tabs. Sticky mini-player when scrolling. |
-| **Tablet (640–1023px)** | Two-column grid where appropriate. Sidebar becomes slide-over drawer. Video player at full width, sidebar tabs below. |
-| **Desktop (1024–1439px)** | Full application layout. Collapsible sidebar (240px). 60/40 split for video + sidebar. Command palette (Cmd+K). |
-| **Wide (1440px+)** | Content max-width 1200px, centered. Generous margins. Three-column layouts for card grids. |
+| Breakpoint                | Layout changes                                                                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mobile (< 640px)**      | Single column. Bottom tab navigation. Sidebar hidden. Full-width cards. Video player stacks above sidebar tabs. Sticky mini-player when scrolling. |
+| **Tablet (640–1023px)**   | Two-column grid where appropriate. Sidebar becomes slide-over drawer. Video player at full width, sidebar tabs below.                              |
+| **Desktop (1024–1439px)** | Full application layout. Collapsible sidebar (240px). 60/40 split for video + sidebar. Command palette (Cmd+K).                                    |
+| **Wide (1440px+)**        | Content max-width 1200px, centered. Generous margins. Three-column layouts for card grids.                                                         |
 
 ### 4.2 Mobile-Specific Patterns
 
@@ -473,17 +475,17 @@ Shortcut:     JetBrains Mono 12px, text-muted-foreground
 
 ### 5.2 Checklist
 
-| Requirement | Implementation |
-|---|---|
-| Color contrast | 4.5:1 for normal text, 3:1 for large text and UI components |
-| Focus indicators | 2px outline, ring color, 2px offset. Visible in both themes. |
-| Keyboard navigation | Full tab navigation, arrow keys in menus, Escape to close modals |
-| Screen reader | Semantic HTML, ARIA labels on interactive elements, live regions for dynamic content |
-| Motion sensitivity | `prefers-reduced-motion` support — reduce all animations to simple crossfades |
-| Text scaling | UI readable up to 200% browser zoom without horizontal scrolling |
-| Alternative text | All clinical images, diagrams, and video thumbnails have descriptive alt text |
-| Video accessibility | Captions (FR/NL) on all video content. Transcript panel always available. |
-| Color independence | Status never conveyed by color alone — always paired with icon + label |
+| Requirement         | Implementation                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| Color contrast      | 4.5:1 for normal text, 3:1 for large text and UI components                          |
+| Focus indicators    | 2px outline, ring color, 2px offset. Visible in both themes.                         |
+| Keyboard navigation | Full tab navigation, arrow keys in menus, Escape to close modals                     |
+| Screen reader       | Semantic HTML, ARIA labels on interactive elements, live regions for dynamic content |
+| Motion sensitivity  | `prefers-reduced-motion` support — reduce all animations to simple crossfades        |
+| Text scaling        | UI readable up to 200% browser zoom without horizontal scrolling                     |
+| Alternative text    | All clinical images, diagrams, and video thumbnails have descriptive alt text        |
+| Video accessibility | Captions (FR/NL) on all video content. Transcript panel always available.            |
+| Color independence  | Status never conveyed by color alone — always paired with icon + label               |
 
 ---
 
@@ -507,4 +509,4 @@ Shortcut:     JetBrains Mono 12px, text-muted-foreground
 
 ---
 
-*Part of the My VET&GO Design System. See also: [Brand Identity](./03a-brand-identity.md) · [Design Tokens](./03c-design-tokens.md)*
+_Part of the My VET&GO Design System. See also: [Brand Identity](./03a-brand-identity.md) · [Design Tokens](./03c-design-tokens.md)_

@@ -45,57 +45,57 @@ These are the raw color values from the VET&GO website Tailwind palette. They se
 
 Reserved for emergency CTAs, urgent alerts, and critical status. Never decorative.
 
-| Step | Hex | Usage |
-|---|---|---|
-| `vetgo-red-100` | `#FCC7C9` | Error background tint |
-| `vetgo-red-200` | `#FA9093` | Error border, light warning |
-| `vetgo-red-300` | `#F7585E` | Hover on error actions |
-| `vetgo-red-400` | `#F52128` | Active error state |
+| Step                      | Hex           | Usage                                                   |
+| ------------------------- | ------------- | ------------------------------------------------------- |
+| `vetgo-red-100`           | `#FCC7C9`     | Error background tint                                   |
+| `vetgo-red-200`           | `#FA9093`     | Error border, light warning                             |
+| `vetgo-red-300`           | `#F7585E`     | Hover on error actions                                  |
+| `vetgo-red-400`           | `#F52128`     | Active error state                                      |
 | **`vetgo-red` (DEFAULT)** | **`#D10A10`** | **Emergency CTA, destructive actions, critical alerts** |
-| `vetgo-red-600` | `#A8080D` | Dark mode error accent |
-| `vetgo-red-700` | `#7E060A` | Error text on light backgrounds |
-| `vetgo-red-800` | `#540407` | Deep error background (dark mode) |
-| `vetgo-red-900` | `#2A0203` | Error surface (dark mode) |
+| `vetgo-red-600`           | `#A8080D`     | Dark mode error accent                                  |
+| `vetgo-red-700`           | `#7E060A`     | Error text on light backgrounds                         |
+| `vetgo-red-800`           | `#540407`     | Deep error background (dark mode)                       |
+| `vetgo-red-900`           | `#2A0203`     | Error surface (dark mode)                               |
 
 ### 2.2 Secondary (Deep Teal) — Brand Core & Surfaces
 
 The dominant brand color. Drives backgrounds, headers, hero sections, and **surface elevation** in both light and dark modes.
 
-| Step | Hex | Usage |
-|---|---|---|
-| `vetgo-teal-100` | `#CCDAE0` | Subtle brand tint (light mode borders) |
-| `vetgo-teal-200` | `#99B5C1` | Disabled text on brand backgrounds |
-| `vetgo-teal-300` | `#668FA1` | Secondary text on dark surfaces |
-| `vetgo-teal-400` | `#336A82` | Muted brand elements |
+| Step                       | Hex           | Usage                                              |
+| -------------------------- | ------------- | -------------------------------------------------- |
+| `vetgo-teal-100`           | `#CCDAE0`     | Subtle brand tint (light mode borders)             |
+| `vetgo-teal-200`           | `#99B5C1`     | Disabled text on brand backgrounds                 |
+| `vetgo-teal-300`           | `#668FA1`     | Secondary text on dark surfaces                    |
+| `vetgo-teal-400`           | `#336A82`     | Muted brand elements                               |
 | **`vetgo-teal` (DEFAULT)** | **`#004563`** | **Hero backgrounds, brand headers, deep surfaces** |
-| `vetgo-teal-600` | `#00374F` | Dark mode card backgrounds |
-| `vetgo-teal-700` | `#00293B` | Dark mode secondary surface |
-| `vetgo-teal-800` | `#001C28` | Dark mode primary background |
-| `vetgo-teal-900` | `#000E14` | Dark mode deepest surface (base canvas) |
+| `vetgo-teal-600`           | `#00374F`     | Dark mode card backgrounds                         |
+| `vetgo-teal-700`           | `#00293B`     | Dark mode secondary surface                        |
+| `vetgo-teal-800`           | `#001C28`     | Dark mode primary background                       |
+| `vetgo-teal-900`           | `#000E14`     | Dark mode deepest surface (base canvas)            |
 
 ### 2.3 Tertiary (Teal/Cyan) — Interactive & Accent
 
 The action color. All interactive elements — buttons, links, toggles, focus rings, progress fills. **This maps to shadcn's `--primary`.**
 
-| Step | Hex | Usage |
-|---|---|---|
-| `vetgo-cyan-50` | `#D6FCFF` | Highlight tint, selected row (light) |
-| `vetgo-cyan-100` | `#CCE6E8` | Light interactive background |
-| `vetgo-cyan-200` | `#99CCD1` | Interactive border, disabled interactive |
-| `vetgo-cyan-300` | `#66B3BA` | Interactive hover (dark mode) |
-| `vetgo-cyan-400` | `#3399A3` | Interactive hover (light mode) |
+| Step                       | Hex           | Usage                                          |
+| -------------------------- | ------------- | ---------------------------------------------- |
+| `vetgo-cyan-50`            | `#D6FCFF`     | Highlight tint, selected row (light)           |
+| `vetgo-cyan-100`           | `#CCE6E8`     | Light interactive background                   |
+| `vetgo-cyan-200`           | `#99CCD1`     | Interactive border, disabled interactive       |
+| `vetgo-cyan-300`           | `#66B3BA`     | Interactive hover (dark mode)                  |
+| `vetgo-cyan-400`           | `#3399A3`     | Interactive hover (light mode)                 |
 | **`vetgo-cyan` (DEFAULT)** | **`#00808C`** | **Buttons, links, active states, focus rings** |
-| `vetgo-cyan-600` | `#006670` | Interactive pressed state |
-| `vetgo-cyan-700` | `#004D54` | Interactive on dark surfaces |
-| `vetgo-cyan-800` | `#003338` | Deep interactive background |
-| `vetgo-cyan-900` | `#001A1C` | Interactive surface (dark mode) |
+| `vetgo-cyan-600`           | `#006670`     | Interactive pressed state                      |
+| `vetgo-cyan-700`           | `#004D54`     | Interactive on dark surfaces                   |
+| `vetgo-cyan-800`           | `#003338`     | Deep interactive background                    |
+| `vetgo-cyan-900`           | `#001A1C`     | Interactive surface (dark mode)                |
 
 ### 2.4 Functional Colors
 
-| Token | Hex | Usage |
-|---|---|---|
+| Token                 | Hex       | Usage                                       |
+| --------------------- | --------- | ------------------------------------------- |
 | `functional-positive` | `#0AC96D` | Completed, mastered, passed, success states |
-| `functional-negative` | `#DA3B40` | Validation errors, failed assessments |
+| `functional-negative` | `#DA3B40` | Validation errors, failed assessments       |
 
 ---
 
@@ -105,55 +105,55 @@ shadcn/ui uses a `name` / `name-foreground` convention where the base token cont
 
 ### 3.1 Core Token Mapping
 
-| shadcn Token | Light Mode | Dark Mode | VET&GO Source | Purpose |
-|---|---|---|---|---|
-| **`--background`** | `#FFFFFF` | `#000E14` | white / vetgo-teal-900 | Page canvas |
-| **`--foreground`** | `#000E14` | `#E8EAED` | vetgo-teal-900 / custom | Body text, headings |
-| **`--card`** | `#F2F6F8` | `#001C28` | vetgo-teal-100@8% / vetgo-teal-800 | Elevated cards, sidebar |
-| **`--card-foreground`** | `#000E14` | `#E8EAED` | same as foreground | Text on cards |
-| **`--popover`** | `#EBF0F3` | `#00293B` | vetgo-teal-100@14% / vetgo-teal-700 | Modals, dropdowns, command palette |
-| **`--popover-foreground`** | `#000E14` | `#E8EAED` | same as foreground | Text on popovers |
-| **`--primary`** | `#00808C` | `#00808C` | vetgo-cyan DEFAULT | Buttons, links, active states |
-| **`--primary-foreground`** | `#FFFFFF` | `#FFFFFF` | white | Text on primary surfaces |
-| **`--secondary`** | `#F2F6F8` | `#001C28` | vetgo-teal-100@8% / vetgo-teal-800 | Low-emphasis surfaces |
-| **`--secondary-foreground`** | `#000E14` | `#E8EAED` | same as foreground | Text on secondary |
-| **`--muted`** | `#E4EAED` | `#000A0F` | vetgo-teal-100@20% / below teal-900 | Sunken surfaces, inputs |
-| **`--muted-foreground`** | `#336A82` | `#668FA1` | vetgo-teal-400 / vetgo-teal-300 | Descriptions, metadata, placeholders |
-| **`--accent`** | `#D6FCFF` | `#001A1C` | vetgo-cyan-50 / vetgo-cyan-900 | Hover states, selected items |
-| **`--accent-foreground`** | `#000E14` | `#E8EAED` | same as foreground | Text on accent |
-| **`--destructive`** | `#D10A10` | `#F7585E` | vetgo-red DEFAULT / vetgo-red-300 | Emergency CTA, critical alerts |
-| **`--destructive-foreground`** | `#FFFFFF` | `#FFFFFF` | white | Text on destructive |
-| **`--border`** | `#CCDAE0` | `#00293B` | vetgo-teal-100 / vetgo-teal-700 | Dividers, card borders |
-| **`--input`** | `#99B5C1` | `#00374F` | vetgo-teal-200 / vetgo-teal-600 | Input borders |
-| **`--ring`** | `#00808C` | `#00808C` | vetgo-cyan DEFAULT | Focus ring |
+| shadcn Token                   | Light Mode | Dark Mode | VET&GO Source                       | Purpose                              |
+| ------------------------------ | ---------- | --------- | ----------------------------------- | ------------------------------------ |
+| **`--background`**             | `#FFFFFF`  | `#000E14` | white / vetgo-teal-900              | Page canvas                          |
+| **`--foreground`**             | `#000E14`  | `#E8EAED` | vetgo-teal-900 / custom             | Body text, headings                  |
+| **`--card`**                   | `#F2F6F8`  | `#001C28` | vetgo-teal-100@8% / vetgo-teal-800  | Elevated cards, sidebar              |
+| **`--card-foreground`**        | `#000E14`  | `#E8EAED` | same as foreground                  | Text on cards                        |
+| **`--popover`**                | `#EBF0F3`  | `#00293B` | vetgo-teal-100@14% / vetgo-teal-700 | Modals, dropdowns, command palette   |
+| **`--popover-foreground`**     | `#000E14`  | `#E8EAED` | same as foreground                  | Text on popovers                     |
+| **`--primary`**                | `#00808C`  | `#00808C` | vetgo-cyan DEFAULT                  | Buttons, links, active states        |
+| **`--primary-foreground`**     | `#FFFFFF`  | `#FFFFFF` | white                               | Text on primary surfaces             |
+| **`--secondary`**              | `#F2F6F8`  | `#001C28` | vetgo-teal-100@8% / vetgo-teal-800  | Low-emphasis surfaces                |
+| **`--secondary-foreground`**   | `#000E14`  | `#E8EAED` | same as foreground                  | Text on secondary                    |
+| **`--muted`**                  | `#E4EAED`  | `#000A0F` | vetgo-teal-100@20% / below teal-900 | Sunken surfaces, inputs              |
+| **`--muted-foreground`**       | `#336A82`  | `#668FA1` | vetgo-teal-400 / vetgo-teal-300     | Descriptions, metadata, placeholders |
+| **`--accent`**                 | `#D6FCFF`  | `#001A1C` | vetgo-cyan-50 / vetgo-cyan-900      | Hover states, selected items         |
+| **`--accent-foreground`**      | `#000E14`  | `#E8EAED` | same as foreground                  | Text on accent                       |
+| **`--destructive`**            | `#D10A10`  | `#F7585E` | vetgo-red DEFAULT / vetgo-red-300   | Emergency CTA, critical alerts       |
+| **`--destructive-foreground`** | `#FFFFFF`  | `#FFFFFF` | white                               | Text on destructive                  |
+| **`--border`**                 | `#CCDAE0`  | `#00293B` | vetgo-teal-100 / vetgo-teal-700     | Dividers, card borders               |
+| **`--input`**                  | `#99B5C1`  | `#00374F` | vetgo-teal-200 / vetgo-teal-600     | Input borders                        |
+| **`--ring`**                   | `#00808C`  | `#00808C` | vetgo-cyan DEFAULT                  | Focus ring                           |
 
 ### 3.2 Sidebar Tokens
 
 shadcn/ui defines dedicated sidebar tokens. These map to VET&GO's sidebar, which uses the brand surface system.
 
-| shadcn Token | Light Mode | Dark Mode | Purpose |
-|---|---|---|---|
-| **`--sidebar`** | `#F2F6F8` | `#001C28` | Sidebar background |
-| **`--sidebar-foreground`** | `#000E14` | `#E8EAED` | Sidebar text |
-| **`--sidebar-primary`** | `#00808C` | `#00808C` | Active nav item |
-| **`--sidebar-primary-foreground`** | `#FFFFFF` | `#FFFFFF` | Text on active nav |
-| **`--sidebar-accent`** | `#D6FCFF` | `#001A1C` | Hovered/selected nav item bg |
-| **`--sidebar-accent-foreground`** | `#000E14` | `#E8EAED` | Text on hovered nav |
-| **`--sidebar-border`** | `#CCDAE0` | `#00293B` | Sidebar border/divider |
-| **`--sidebar-ring`** | `#00808C` | `#00808C` | Focus ring in sidebar |
+| shadcn Token                       | Light Mode | Dark Mode | Purpose                      |
+| ---------------------------------- | ---------- | --------- | ---------------------------- |
+| **`--sidebar`**                    | `#F2F6F8`  | `#001C28` | Sidebar background           |
+| **`--sidebar-foreground`**         | `#000E14`  | `#E8EAED` | Sidebar text                 |
+| **`--sidebar-primary`**            | `#00808C`  | `#00808C` | Active nav item              |
+| **`--sidebar-primary-foreground`** | `#FFFFFF`  | `#FFFFFF` | Text on active nav           |
+| **`--sidebar-accent`**             | `#D6FCFF`  | `#001A1C` | Hovered/selected nav item bg |
+| **`--sidebar-accent-foreground`**  | `#000E14`  | `#E8EAED` | Text on hovered nav          |
+| **`--sidebar-border`**             | `#CCDAE0`  | `#00293B` | Sidebar border/divider       |
+| **`--sidebar-ring`**               | `#00808C`  | `#00808C` | Focus ring in sidebar        |
 
 ### 3.3 Radius Tokens
 
 shadcn uses a single `--radius` base with calculated variants. VET&GO maps its radii to this system.
 
-| shadcn Token | Value | VET&GO Equivalent |
-|---|---|---|
-| `--radius` (base) | `0.75rem` (12px) | `--radius-lg` — card radius, our most common |
-| `--radius-sm` | `calc(var(--radius) * 0.5)` = 6px | Between sm (4px) and md (8px) |
-| `--radius-md` | `calc(var(--radius) * 0.667)` = 8px | `--radius-md` — buttons |
-| `--radius-lg` | `var(--radius)` = 12px | `--radius-lg` — cards |
-| `--radius-xl` | `calc(var(--radius) * 1.333)` = 16px | `--radius-xl` |
-| `--radius-full` | `9999px` | `--radius-full` — pills, avatars |
+| shadcn Token      | Value                                | VET&GO Equivalent                            |
+| ----------------- | ------------------------------------ | -------------------------------------------- |
+| `--radius` (base) | `0.75rem` (12px)                     | `--radius-lg` — card radius, our most common |
+| `--radius-sm`     | `calc(var(--radius) * 0.5)` = 6px    | Between sm (4px) and md (8px)                |
+| `--radius-md`     | `calc(var(--radius) * 0.667)` = 8px  | `--radius-md` — buttons                      |
+| `--radius-lg`     | `var(--radius)` = 12px               | `--radius-lg` — cards                        |
+| `--radius-xl`     | `calc(var(--radius) * 1.333)` = 16px | `--radius-xl`                                |
+| `--radius-full`   | `9999px`                             | `--radius-full` — pills, avatars             |
 
 ---
 
@@ -163,60 +163,60 @@ shadcn uses a single `--radius` base with calculated variants. VET&GO maps its r
 
 shadcn defines `--chart-1` through `--chart-5`. VET&GO extends this for its 12 veterinary specialties.
 
-| Token | Hex | Specialty |
-|---|---|---|
-| `--chart-1` | `#F52128` | Urgences / ECC (Brand Red) |
-| `--chart-2` | `#0AC96D` | Success / Positive (functional green) |
-| `--chart-3` | `#3B82F6` | Imagerie médicale (Blue) |
-| `--chart-4` | `#D69E2E` | Anesthésie / Analgésie (Amber) |
-| `--chart-5` | `#EC4899` | Dermatologie (Rose) |
-| `--chart-6` | `#6366F1` | Chirurgie (Indigo) |
-| `--chart-7` | `#8B5CF6` | Oncologie (Purple) |
-| `--chart-8` | `#22C55E` | Comportement (Green) |
-| `--chart-9` | `#F97316` | Médecine féline (Orange) |
-| `--chart-10` | `#F43F5E` | Cardiologie (Rose-Red) |
-| `--chart-11` | `#64748B` | Neurologie (Slate) |
-| `--chart-12` | `#84CC16` | NAC (Lime) |
+| Token        | Hex       | Specialty                             |
+| ------------ | --------- | ------------------------------------- |
+| `--chart-1`  | `#F52128` | Urgences / ECC (Brand Red)            |
+| `--chart-2`  | `#0AC96D` | Success / Positive (functional green) |
+| `--chart-3`  | `#3B82F6` | Imagerie médicale (Blue)              |
+| `--chart-4`  | `#D69E2E` | Anesthésie / Analgésie (Amber)        |
+| `--chart-5`  | `#EC4899` | Dermatologie (Rose)                   |
+| `--chart-6`  | `#6366F1` | Chirurgie (Indigo)                    |
+| `--chart-7`  | `#8B5CF6` | Oncologie (Purple)                    |
+| `--chart-8`  | `#22C55E` | Comportement (Green)                  |
+| `--chart-9`  | `#F97316` | Médecine féline (Orange)              |
+| `--chart-10` | `#F43F5E` | Cardiologie (Rose-Red)                |
+| `--chart-11` | `#64748B` | Neurologie (Slate)                    |
+| `--chart-12` | `#84CC16` | NAC (Lime)                            |
 
 ### 4.2 Status Tokens
 
 Beyond shadcn's `--destructive`, VET&GO needs a full status palette.
 
-| Token | Light Mode | Dark Mode | Usage |
-|---|---|---|---|
-| `--status-success` | `#0AC96D` | `#0AC96D` | Completed, mastered |
-| `--status-warning` | `#D97706` | `#FBBF24` | Expiring credits, streaks at risk |
-| `--status-error` | `#D10A10` | `#F7585E` | Failed, critical |
-| `--status-info` | `#00808C` | `#66B3BA` | Informational badges |
-| `--status-neutral` | `#99B5C1` | `#336A82` | Disabled, not started |
+| Token              | Light Mode | Dark Mode | Usage                             |
+| ------------------ | ---------- | --------- | --------------------------------- |
+| `--status-success` | `#0AC96D`  | `#0AC96D` | Completed, mastered               |
+| `--status-warning` | `#D97706`  | `#FBBF24` | Expiring credits, streaks at risk |
+| `--status-error`   | `#D10A10`  | `#F7585E` | Failed, critical                  |
+| `--status-info`    | `#00808C`  | `#66B3BA` | Informational badges              |
+| `--status-neutral` | `#99B5C1`  | `#336A82` | Disabled, not started             |
 
 ### 4.3 Brand Surface Token
 
 For hero sections and deep brand moments that sit outside the standard card/popover model.
 
-| Token | Light Mode | Dark Mode | Usage |
-|---|---|---|---|
-| `--surface-brand` | `#004563` | `#004563` | Hero sections, brand moments (same both modes) |
-| `--surface-brand-foreground` | `#FFFFFF` | `#FFFFFF` | Text on brand surfaces |
+| Token                        | Light Mode | Dark Mode | Usage                                          |
+| ---------------------------- | ---------- | --------- | ---------------------------------------------- |
+| `--surface-brand`            | `#004563`  | `#004563` | Hero sections, brand moments (same both modes) |
+| `--surface-brand-foreground` | `#FFFFFF`  | `#FFFFFF` | Text on brand surfaces                         |
 
 ### 4.4 Specialty Accent Colors
 
 Each veterinary specialty has a unique accent color for pathway nodes, radar chart axes, and section headers. These are registered as CSS variables for Nivo chart theming and custom component use.
 
-| Specialty | Token | Hex |
-|---|---|---|
-| Urgences / ECC | `--specialty-ecc` | `#F52128` |
-| Anesthésie / Analgésie | `--specialty-anesthesie` | `#D69E2E` |
-| Imagerie médicale | `--specialty-imagerie` | `#3B82F6` |
-| Dentisterie | `--specialty-dentisterie` | `#00808C` |
-| Dermatologie | `--specialty-dermatologie` | `#EC4899` |
-| Chirurgie | `--specialty-chirurgie` | `#6366F1` |
-| Oncologie | `--specialty-oncologie` | `#8B5CF6` |
-| Comportement | `--specialty-comportement` | `#22C55E` |
-| Médecine féline | `--specialty-feline` | `#F97316` |
-| Cardiologie | `--specialty-cardiologie` | `#F43F5E` |
-| Neurologie | `--specialty-neurologie` | `#64748B` |
-| NAC | `--specialty-nac` | `#84CC16` |
+| Specialty              | Token                      | Hex       |
+| ---------------------- | -------------------------- | --------- |
+| Urgences / ECC         | `--specialty-ecc`          | `#F52128` |
+| Anesthésie / Analgésie | `--specialty-anesthesie`   | `#D69E2E` |
+| Imagerie médicale      | `--specialty-imagerie`     | `#3B82F6` |
+| Dentisterie            | `--specialty-dentisterie`  | `#00808C` |
+| Dermatologie           | `--specialty-dermatologie` | `#EC4899` |
+| Chirurgie              | `--specialty-chirurgie`    | `#6366F1` |
+| Oncologie              | `--specialty-oncologie`    | `#8B5CF6` |
+| Comportement           | `--specialty-comportement` | `#22C55E` |
+| Médecine féline        | `--specialty-feline`       | `#F97316` |
+| Cardiologie            | `--specialty-cardiologie`  | `#F43F5E` |
+| Neurologie             | `--specialty-neurologie`   | `#64748B` |
+| NAC                    | `--specialty-nac`          | `#84CC16` |
 
 ---
 
@@ -226,13 +226,13 @@ Surfaces use the **secondary deep teal** scale to create depth. The principle: h
 
 ### 5.1 How Surfaces Map to shadcn
 
-| Elevation | shadcn Token | Light | Dark | Usage |
-|---|---|---|---|---|
-| Base (canvas) | `--background` | `#FFFFFF` | `#000E14` | Page canvas |
-| Raised | `--card` / `--secondary` | `#F2F6F8` | `#001C28` | Cards, sidebar |
-| Overlay | `--popover` | `#EBF0F3` | `#00293B` | Modals, dropdowns, cmd palette |
-| Sunken | `--muted` | `#E4EAED` | `#000A0F` | Input fields, code blocks |
-| Brand | `--surface-brand` (custom) | `#004563` | `#004563` | Hero sections |
+| Elevation     | shadcn Token               | Light     | Dark      | Usage                          |
+| ------------- | -------------------------- | --------- | --------- | ------------------------------ |
+| Base (canvas) | `--background`             | `#FFFFFF` | `#000E14` | Page canvas                    |
+| Raised        | `--card` / `--secondary`   | `#F2F6F8` | `#001C28` | Cards, sidebar                 |
+| Overlay       | `--popover`                | `#EBF0F3` | `#00293B` | Modals, dropdowns, cmd palette |
+| Sunken        | `--muted`                  | `#E4EAED` | `#000A0F` | Input fields, code blocks      |
+| Brand         | `--surface-brand` (custom) | `#004563` | `#004563` | Hero sections                  |
 
 **Why brand-tinted surfaces matter:** Generic gray (#121417, #1A1D22) makes the platform feel like any SaaS tool. Using the secondary deep teal scale for surfaces gives My VET&GO a recognizable identity even in dark mode — the subtle blue-green tint is felt without being seen consciously. This is the difference between "a dark app" and "the VET&GO app in dark mode."
 
@@ -243,6 +243,7 @@ My VET&GO defaults to dark mode. This is the **primary** design surface.
 **Rationale:** Veterinarians use this tool during night shifts, in dim consultation rooms, in surgery prep. Research shows 14% better information retention after 30-minute sessions with dark backgrounds, and 37% less eye strain after 45 minutes of continuous use.
 
 **Implementation:**
+
 - `next-themes` with `attribute="class"` and `defaultTheme="dark"`
 - Surface tokens use the secondary deep-teal scale (NOT generic grays) — brand identity persists in dark mode
 - Elevation hierarchy: 4 levels using progressively lighter secondary-scale surfaces
@@ -261,14 +262,14 @@ All text-on-surface combinations must pass WCAG 2.2 AA (4.5:1 for normal text, 3
 
 ### 6.1 Key Contrast Checks
 
-| Combination | Ratio | Status |
-|---|---|---|
-| `--foreground` on `--background` (light) | 18.5:1 | Pass AAA |
-| `--foreground` on `--background` (dark) | 14.2:1 | Pass AAA |
-| `--primary-foreground` on `--primary` (#00808C) | 4.6:1 | Pass AA |
-| `--surface-brand-foreground` on `--surface-brand` (#004563) | 9.7:1 | Pass AAA |
-| `text-primary` link on `--background` (light) | 5.8:1 | Pass AA |
-| `text-primary` link (dark: #66B3BA) on `--background` (dark) | 8.9:1 | Pass AAA |
+| Combination                                                  | Ratio  | Status   |
+| ------------------------------------------------------------ | ------ | -------- |
+| `--foreground` on `--background` (light)                     | 18.5:1 | Pass AAA |
+| `--foreground` on `--background` (dark)                      | 14.2:1 | Pass AAA |
+| `--primary-foreground` on `--primary` (#00808C)              | 4.6:1  | Pass AA  |
+| `--surface-brand-foreground` on `--surface-brand` (#004563)  | 9.7:1  | Pass AAA |
+| `text-primary` link on `--background` (light)                | 5.8:1  | Pass AA  |
+| `text-primary` link (dark: #66B3BA) on `--background` (dark) | 8.9:1  | Pass AAA |
 
 ---
 
@@ -279,8 +280,8 @@ All text-on-surface combinations must pass WCAG 2.2 AA (4.5:1 for normal text, 3
 This maps VET&GO's design system onto shadcn/ui's expected CSS variable structure. Components using `bg-primary`, `text-muted-foreground`, etc. will automatically resolve to VET&GO's branded values.
 
 ```css
-@import "tailwindcss";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -354,121 +355,121 @@ This maps VET&GO's design system onto shadcn/ui's expected CSS variable structur
   --radius: 0.75rem;
 
   /* Core surfaces */
-  --background: #FFFFFF;
-  --foreground: #000E14;
-  --card: #F2F6F8;
-  --card-foreground: #000E14;
-  --popover: #EBF0F3;
-  --popover-foreground: #000E14;
+  --background: #ffffff;
+  --foreground: #000e14;
+  --card: #f2f6f8;
+  --card-foreground: #000e14;
+  --popover: #ebf0f3;
+  --popover-foreground: #000e14;
 
   /* Interactive */
-  --primary: #00808C;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F2F6F8;
-  --secondary-foreground: #000E14;
-  --muted: #E4EAED;
-  --muted-foreground: #336A82;
-  --accent: #D6FCFF;
-  --accent-foreground: #000E14;
+  --primary: #00808c;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f6f8;
+  --secondary-foreground: #000e14;
+  --muted: #e4eaed;
+  --muted-foreground: #336a82;
+  --accent: #d6fcff;
+  --accent-foreground: #000e14;
 
   /* Destructive (emergency red) */
-  --destructive: #D10A10;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #d10a10;
+  --destructive-foreground: #ffffff;
 
   /* Structure */
-  --border: #CCDAE0;
-  --input: #99B5C1;
-  --ring: #00808C;
+  --border: #ccdae0;
+  --input: #99b5c1;
+  --ring: #00808c;
 
   /* Charts / specialties */
-  --chart-1: #F52128;
-  --chart-2: #0AC96D;
-  --chart-3: #3B82F6;
-  --chart-4: #D69E2E;
-  --chart-5: #EC4899;
-  --chart-6: #6366F1;
-  --chart-7: #8B5CF6;
-  --chart-8: #22C55E;
-  --chart-9: #F97316;
-  --chart-10: #F43F5E;
-  --chart-11: #64748B;
-  --chart-12: #84CC16;
+  --chart-1: #f52128;
+  --chart-2: #0ac96d;
+  --chart-3: #3b82f6;
+  --chart-4: #d69e2e;
+  --chart-5: #ec4899;
+  --chart-6: #6366f1;
+  --chart-7: #8b5cf6;
+  --chart-8: #22c55e;
+  --chart-9: #f97316;
+  --chart-10: #f43f5e;
+  --chart-11: #64748b;
+  --chart-12: #84cc16;
 
   /* Sidebar */
-  --sidebar: #F2F6F8;
-  --sidebar-foreground: #000E14;
-  --sidebar-primary: #00808C;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #D6FCFF;
-  --sidebar-accent-foreground: #000E14;
-  --sidebar-border: #CCDAE0;
-  --sidebar-ring: #00808C;
+  --sidebar: #f2f6f8;
+  --sidebar-foreground: #000e14;
+  --sidebar-primary: #00808c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d6fcff;
+  --sidebar-accent-foreground: #000e14;
+  --sidebar-border: #ccdae0;
+  --sidebar-ring: #00808c;
 
   /* Extended: status */
-  --status-success: #0AC96D;
-  --status-warning: #D97706;
-  --status-error: #D10A10;
-  --status-info: #00808C;
-  --status-neutral: #99B5C1;
+  --status-success: #0ac96d;
+  --status-warning: #d97706;
+  --status-error: #d10a10;
+  --status-info: #00808c;
+  --status-neutral: #99b5c1;
 
   /* Extended: brand surface */
   --surface-brand: #004563;
-  --surface-brand-foreground: #FFFFFF;
+  --surface-brand-foreground: #ffffff;
 }
 
 /* ─── Dark mode (DEFAULT — brand-tinted, not generic gray) ─── */
 .dark {
-  --background: #000E14;
-  --foreground: #E8EAED;
-  --card: #001C28;
-  --card-foreground: #E8EAED;
-  --popover: #00293B;
-  --popover-foreground: #E8EAED;
+  --background: #000e14;
+  --foreground: #e8eaed;
+  --card: #001c28;
+  --card-foreground: #e8eaed;
+  --popover: #00293b;
+  --popover-foreground: #e8eaed;
 
-  --primary: #00808C;
-  --primary-foreground: #FFFFFF;
-  --secondary: #001C28;
-  --secondary-foreground: #E8EAED;
-  --muted: #000A0F;
-  --muted-foreground: #668FA1;
-  --accent: #001A1C;
-  --accent-foreground: #E8EAED;
+  --primary: #00808c;
+  --primary-foreground: #ffffff;
+  --secondary: #001c28;
+  --secondary-foreground: #e8eaed;
+  --muted: #000a0f;
+  --muted-foreground: #668fa1;
+  --accent: #001a1c;
+  --accent-foreground: #e8eaed;
 
-  --destructive: #F7585E;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #f7585e;
+  --destructive-foreground: #ffffff;
 
-  --border: #00293B;
-  --input: #00374F;
-  --ring: #00808C;
+  --border: #00293b;
+  --input: #00374f;
+  --ring: #00808c;
 
   /* Charts stay vibrant in dark mode */
-  --chart-1: #F7585E;
-  --chart-2: #0AC96D;
-  --chart-3: #60A5FA;
-  --chart-4: #FBBF24;
-  --chart-5: #F472B6;
-  --chart-6: #818CF8;
-  --chart-7: #A78BFA;
-  --chart-8: #4ADE80;
-  --chart-9: #FB923C;
-  --chart-10: #FB7185;
-  --chart-11: #94A3B8;
-  --chart-12: #A3E635;
+  --chart-1: #f7585e;
+  --chart-2: #0ac96d;
+  --chart-3: #60a5fa;
+  --chart-4: #fbbf24;
+  --chart-5: #f472b6;
+  --chart-6: #818cf8;
+  --chart-7: #a78bfa;
+  --chart-8: #4ade80;
+  --chart-9: #fb923c;
+  --chart-10: #fb7185;
+  --chart-11: #94a3b8;
+  --chart-12: #a3e635;
 
-  --sidebar: #001C28;
-  --sidebar-foreground: #E8EAED;
-  --sidebar-primary: #00808C;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #001A1C;
-  --sidebar-accent-foreground: #E8EAED;
-  --sidebar-border: #00293B;
-  --sidebar-ring: #00808C;
+  --sidebar: #001c28;
+  --sidebar-foreground: #e8eaed;
+  --sidebar-primary: #00808c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #001a1c;
+  --sidebar-accent-foreground: #e8eaed;
+  --sidebar-border: #00293b;
+  --sidebar-ring: #00808c;
 
-  --status-success: #0AC96D;
-  --status-warning: #FBBF24;
-  --status-error: #F7585E;
-  --status-info: #66B3BA;
-  --status-neutral: #336A82;
+  --status-success: #0ac96d;
+  --status-warning: #fbbf24;
+  --status-error: #f7585e;
+  --status-info: #66b3ba;
+  --status-neutral: #336a82;
 
   /* Brand surface unchanged */
 }
@@ -493,39 +494,39 @@ export default {
   theme: {
     extend: {
       colors: {
-        "vetgo-red": {
-          100: "#FCC7C9",
-          200: "#FA9093",
-          300: "#F7585E",
-          400: "#F52128",
-          DEFAULT: "#D10A10",
-          600: "#A8080D",
-          700: "#7E060A",
-          800: "#540407",
-          900: "#2A0203",
+        'vetgo-red': {
+          100: '#FCC7C9',
+          200: '#FA9093',
+          300: '#F7585E',
+          400: '#F52128',
+          DEFAULT: '#D10A10',
+          600: '#A8080D',
+          700: '#7E060A',
+          800: '#540407',
+          900: '#2A0203',
         },
-        "vetgo-teal": {
-          100: "#CCDAE0",
-          200: "#99B5C1",
-          300: "#668FA1",
-          400: "#336A82",
-          DEFAULT: "#004563",
-          600: "#00374F",
-          700: "#00293B",
-          800: "#001C28",
-          900: "#000E14",
+        'vetgo-teal': {
+          100: '#CCDAE0',
+          200: '#99B5C1',
+          300: '#668FA1',
+          400: '#336A82',
+          DEFAULT: '#004563',
+          600: '#00374F',
+          700: '#00293B',
+          800: '#001C28',
+          900: '#000E14',
         },
-        "vetgo-cyan": {
-          50: "#D6FCFF",
-          100: "#CCE6E8",
-          200: "#99CCD1",
-          300: "#66B3BA",
-          400: "#3399A3",
-          DEFAULT: "#00808C",
-          600: "#006670",
-          700: "#004D54",
-          800: "#003338",
-          900: "#001A1C",
+        'vetgo-cyan': {
+          50: '#D6FCFF',
+          100: '#CCE6E8',
+          200: '#99CCD1',
+          300: '#66B3BA',
+          400: '#3399A3',
+          DEFAULT: '#00808C',
+          600: '#006670',
+          700: '#004D54',
+          800: '#003338',
+          900: '#001A1C',
         },
       },
     },
@@ -537,30 +538,30 @@ export default {
 
 If migrating from the original design system token naming, use this crosswalk:
 
-| Original Token | New shadcn Token | Tailwind Utility |
-|---|---|---|
-| `--surface-base` | `--background` | `bg-background` |
-| `--surface-raised` | `--card` | `bg-card` |
-| `--surface-overlay` | `--popover` | `bg-popover` |
-| `--surface-sunken` | `--muted` | `bg-muted` |
-| `--color-text-primary` | `--foreground` | `text-foreground` |
-| `--color-text-secondary` | `--muted-foreground` | `text-muted-foreground` |
-| `--color-text-tertiary` | *(use muted-foreground with opacity)* | `text-muted-foreground/60` |
-| `--color-text-on-brand` | `--surface-brand-foreground` | *(custom)* |
-| `--color-text-on-interactive` | `--primary-foreground` | `text-primary-foreground` |
-| `--color-text-link` | `--primary` | `text-primary` |
-| `--color-text-error` | `--destructive` | `text-destructive` |
-| `--color-interactive` | `--primary` | `bg-primary` |
-| `--color-interactive-hover` | *(use primary with opacity)* | `bg-primary/90` |
-| `--color-interactive-active` | *(use primary with opacity)* | `bg-primary/80` |
-| `--color-interactive-subtle` | `--accent` | `bg-accent` |
-| `--color-border-default` | `--border` | `border-border` |
-| `--color-border-strong` | `--input` | `border-input` |
-| `--color-border-interactive` | `--ring` | `ring-ring` |
-| `--color-status-success` | `--status-success` | *(custom utility)* |
-| `--color-status-warning` | `--status-warning` | *(custom utility)* |
-| `--color-status-error` | `--destructive` | `text-destructive` |
-| `--color-status-info` | `--status-info` | *(custom utility)* |
+| Original Token                | New shadcn Token                      | Tailwind Utility           |
+| ----------------------------- | ------------------------------------- | -------------------------- |
+| `--surface-base`              | `--background`                        | `bg-background`            |
+| `--surface-raised`            | `--card`                              | `bg-card`                  |
+| `--surface-overlay`           | `--popover`                           | `bg-popover`               |
+| `--surface-sunken`            | `--muted`                             | `bg-muted`                 |
+| `--color-text-primary`        | `--foreground`                        | `text-foreground`          |
+| `--color-text-secondary`      | `--muted-foreground`                  | `text-muted-foreground`    |
+| `--color-text-tertiary`       | _(use muted-foreground with opacity)_ | `text-muted-foreground/60` |
+| `--color-text-on-brand`       | `--surface-brand-foreground`          | _(custom)_                 |
+| `--color-text-on-interactive` | `--primary-foreground`                | `text-primary-foreground`  |
+| `--color-text-link`           | `--primary`                           | `text-primary`             |
+| `--color-text-error`          | `--destructive`                       | `text-destructive`         |
+| `--color-interactive`         | `--primary`                           | `bg-primary`               |
+| `--color-interactive-hover`   | _(use primary with opacity)_          | `bg-primary/90`            |
+| `--color-interactive-active`  | _(use primary with opacity)_          | `bg-primary/80`            |
+| `--color-interactive-subtle`  | `--accent`                            | `bg-accent`                |
+| `--color-border-default`      | `--border`                            | `border-border`            |
+| `--color-border-strong`       | `--input`                             | `border-input`             |
+| `--color-border-interactive`  | `--ring`                              | `ring-ring`                |
+| `--color-status-success`      | `--status-success`                    | _(custom utility)_         |
+| `--color-status-warning`      | `--status-warning`                    | _(custom utility)_         |
+| `--color-status-error`        | `--destructive`                       | `text-destructive`         |
+| `--color-status-info`         | `--status-info`                       | _(custom utility)_         |
 
 ---
 
@@ -596,4 +597,4 @@ Ensure the shadcn CLI is configured to match VET&GO's conventions:
 
 ---
 
-*Part of the My VET&GO Design System. See also: [Brand Identity](./03a-brand-identity.md) · [UX Patterns](./03b-ux-patterns.md)*
+_Part of the My VET&GO Design System. See also: [Brand Identity](./03a-brand-identity.md) · [UX Patterns](./03b-ux-patterns.md)_
